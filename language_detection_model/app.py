@@ -91,7 +91,7 @@ def batch_predict(df):
 # =========================
 # STREAMLIT UI (CLI STYLE)
 # =========================
-st.title("🌍 Language Detection CLI (Streamlit Edition)")
+st.title("🌍 Language Detection model")
 st.write("Use commands like: predict, top2, compare, batch")
 
 command = st.text_input("Enter command:")
