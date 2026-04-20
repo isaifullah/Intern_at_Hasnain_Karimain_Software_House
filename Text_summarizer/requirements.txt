@@ -1,0 +1,9 @@
+streamlit
+nltk
+numpy
+pandas
+scikit-learn
+transformers
+torch
+rouge-score
+spacy
