@@ -1,19 +1,16 @@
-import streamlit as st
-import pandas as pd
-import spacy
 import re
-import string
+import spacy
+import pandas as pd
+from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
-# =========================
-# LOAD MODELS
-# =========================
 nlp = spacy.load("en_core_web_sm")
+stop_words = set(stopwords.words("english"))
 stemmer = PorterStemmer()
 
-# =========================
-# YOUR CONTRACTIONS DICT
-# =========================
+#--------------------------
+# Contractions Dictionary
+#--------------------------
 # contractions dictionary, we will use this to expand contractions in the text, like "don't" to "do not", "can't" to "cannot"
 contractions_dict = {
     "I'm": "I am",
@@ -197,164 +194,113 @@ contractions_dict = {
     "may cause": "may cause"
 }
 
-# =========================
-# FUNCTIONS (PIPELINE)
-# =========================
+# ------------------------
+# core functions
+# ------------------------
+
+def validate_input(text):
+    return isinstance(text, str) and text.strip() != ""
+
 
 def expand_contractions(text):
-    for word, replacement in contractions_dict.items():
-        text = text.replace(word, replacement)
-    return text
+    pattern = re.compile(r'\b(' + '|'.join(map(re.escape, contractions_dict.keys())) + r')\b')
+    return pattern.sub(lambda x: contractions_dict[x.group()], text)
 
 
 def clean_text(text):
-    if not isinstance(text, str):
-        return ""
     text = text.lower()
-    text = re.sub(r'[^a-z0-9\s]', ' ', text)
+    text = re.sub(r'http\S+|www\S+', '', text)
+    text = re.sub(r'\S+@\S+', '', text)
+    text = re.sub(r'[^a-z\s]', ' ', text)
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
 
 def custom_tokenizer(text):
-    return re.findall(r'\b\w+\b', text)
+    return re.findall(r'\b[a-zA-Z]+\b', text)
 
 
 def remove_stopwords(tokens):
-    stop_words = set([
-        "is", "the", "and", "a", "an", "in", "to", "of", "for", "on", "with"
-    ])
-    return [t for t in tokens if t.lower() not in stop_words]
+    return [t for t in tokens if t not in stop_words]
 
 
 def lemmatize_text(tokens):
-    doc = nlp(" ".join(tokens))
-    return [token.lemma_ for token in doc]
+    doc = nlp(" ".join(tokens), disable=["parser", "ner"])
+    return [token.lemma_ for token in doc if token.lemma_ != "-PRON-"]
 
 
-def processing_text(text):
+def text_preprocessing_pipeline(text):
+    if not validate_input(text):
+        return []
+
     text = expand_contractions(text)
     text = clean_text(text)
+
     tokens = custom_tokenizer(text)
     tokens = remove_stopwords(tokens)
-    return lemmatize_text(tokens)
+    tokens = lemmatize_text(tokens)
+
+    return tokens
 
 
-# =========================
-# STEM vs LEMMA
-# =========================
+def preprocess_batch(data, text_column=None, method="lemma"):
+
+    import pandas as pd
+    from nltk.stem import PorterStemmer
+
+    stemmer = PorterStemmer()
+
+    # -----------------------
+    # Load / extract texts
+    # -----------------------
+    if isinstance(data, str):
+        data = pd.read_csv(data)
+
+    if isinstance(data, pd.DataFrame):
+        if text_column is None:
+            raise ValueError("text_column must be provided for DataFrame input")
+        texts = data[text_column].fillna("").tolist()
+
+    elif isinstance(data, list):
+        texts = data
+
+    else:
+        raise ValueError("Unsupported input type")
+
+    # -----------------------
+    # Processing
+    # -----------------------
+    results = []
+
+    for text in texts:
+
+        if not validate_input(text):
+            results.append("")
+            continue
+
+        # 🔥 STEM MODE
+        if method == "stem":
+            text_clean = clean_text(expand_contractions(text))
+            tokens = custom_tokenizer(text_clean)
+            tokens = remove_stopwords(tokens)
+            processed = [stemmer.stem(t) for t in tokens]
+
+        # 🔥 LEMMA MODE (DEFAULT)
+        else:
+            processed = text_preprocessing_pipeline(text)
+
+        results.append(" ".join(processed))
+
+    return results
+
 def compare_stem_vs_lemma(text):
+    stemmer = PorterStemmer()
 
-    lemma = processing_text(text)
-
-    text_clean = expand_contractions(text)
-    text_clean = clean_text(text_clean)
-    tokens = custom_tokenizer(text_clean)
+    text = clean_text(expand_contractions(text))
+    tokens = custom_tokenizer(text)
     tokens = remove_stopwords(tokens)
 
     stemmed = [stemmer.stem(t) for t in tokens]
+    lemma = text_preprocessing_pipeline(text)
 
-    return stemmed, lemma
-
-
-# =========================
-# STREAMLIT UI
-# =========================
-st.set_page_config(page_title="NLP Pipeline", layout="wide")
-
-st.title("🧠 NLP Text Preprocessing Pipeline")
-st.write("Clean, tokenize, remove stopwords, lemmatize & compare NLP methods.")
-
-menu = st.sidebar.selectbox(
-    "Choose Option",
-    ["Single Text Processing", "Stem vs Lemma", "Batch CSV Processing"]
-)
-
-# =========================
-# 1. SINGLE TEXT
-# =========================
-if menu == "Single Text Processing":
-
-    st.subheader("🔹 Process Single Text")
-
-    text = st.text_area("Enter text")
-
-    if st.button("Process"):
-
-        if text.strip():
-
-            result = processing_text(text)
-
-            st.success("Processed Output:")
-            st.write(" ".join(result))
-
-        else:
-            st.warning("Enter text first")
-
-
-# =========================
-# 2. STEM VS LEMMA
-# =========================
-elif menu == "Stem vs Lemma":
-
-    st.subheader("🔹 Compare Stemming vs Lemmatization")
-
-    text = st.text_area("Enter text")
-
-    if st.button("Compare"):
-
-        if text.strip():
-
-            stemmed, lemma = compare_stem_vs_lemma(text)
-
-            col1, col2 = st.columns(2)
-
-            with col1:
-                st.subheader("🌱 Stemmed Output")
-                st.write(" ".join(stemmed))
-
-            with col2:
-                st.subheader("🌿 Lemmatized Output")
-                st.write(lemma)
-
-        else:
-            st.warning("Enter text first")
-
-
-# =========================
-# 3. BATCH CSV PROCESSING
-# =========================
-elif menu == "Batch CSV Processing":
-
-    st.subheader("🔹 Upload CSV File")
-
-    file = st.file_uploader("Upload CSV", type=["csv"])
-    column = st.text_input("Enter text column name")
-
-    if st.button("Process Dataset"):
-
-        if file and column:
-
-            df = pd.read_csv(file)
-
-            processed = []
-
-            for text in df[column].fillna(""):
-                processed.append(" ".join(processing_text(text)))
-
-            df["processed_text"] = processed
-
-            st.success("Processing Completed")
-            st.dataframe(df)
-
-            csv = df.to_csv(index=False).encode("utf-8")
-
-            st.download_button(
-                "Download CSV",
-                csv,
-                "processed_output.csv",
-                "text/csv"
-            )
-
-        else:
-            st.warning("Upload file and column name")
+    return {"stemmed": stemmed, "lemmatized": lemma}
