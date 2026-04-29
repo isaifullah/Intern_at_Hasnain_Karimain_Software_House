@@ -1,3 +1,0 @@
-link to the dataset: link to the dataset: https://www.kaggle.com/datasets/okeemmanuel/movie-lens-dataset?select=movies.csv.
-
-note: remove the last "s" from each file, like movies should be movie
