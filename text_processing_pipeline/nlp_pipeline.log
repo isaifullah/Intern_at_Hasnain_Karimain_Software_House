@@ -1,0 +1,432 @@
+2026-04-26 19:02:22,290 | INFO | Pipeline started
+2026-04-26 19:02:22,291 | INFO | Raw Input: I've been running, trying, and playing with better tools!!!
+2026-04-26 19:02:22,294 | INFO | After contraction expansion: I have been running, trying, and playing with better tools!!!
+2026-04-26 19:02:22,294 | INFO | After cleaning: i have been running trying and playing with better tools
+2026-04-26 19:02:22,295 | INFO | Tokens: ['have', 'been', 'running', 'trying', 'and', 'playing', 'with', 'better', 'tools']
+2026-04-26 19:02:22,295 | INFO | After stopword removal: ['running', 'trying', 'playing', 'better', 'tools']
+2026-04-26 19:02:22,305 | INFO | After lemmatization: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 19:02:22,306 | INFO | After duplicate removal: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 19:02:22,306 | INFO | Final Output: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 19:02:22,328 | INFO | Pipeline started
+2026-04-26 19:02:22,328 | INFO | Raw Input: I am loving the new AI tools! They are running amazingly well.
+2026-04-26 19:02:22,329 | INFO | After contraction expansion: I am loving the new AI tools! They are running amazingly well.
+2026-04-26 19:02:22,329 | INFO | After cleaning: i am loving the new ai tools they are running amazingly well
+2026-04-26 19:02:22,329 | INFO | Tokens: ['am', 'loving', 'the', 'new', 'ai', 'tools', 'they', 'are', 'running', 'amazingly', 'well']
+2026-04-26 19:02:22,329 | INFO | After stopword removal: ['loving', 'new', 'ai', 'tools', 'running', 'amazingly', 'well']
+2026-04-26 19:02:22,334 | INFO | After lemmatization: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 19:02:22,334 | INFO | After duplicate removal: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 19:02:22,334 | INFO | Final Output: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 19:02:22,334 | INFO | Pipeline started
+2026-04-26 19:02:22,334 | INFO | Raw Input: The cats are sitting on the mats, waiting for their owners.
+2026-04-26 19:02:22,334 | INFO | After contraction expansion: The cats are sitting on the mats, waiting for their owners.
+2026-04-26 19:02:22,334 | INFO | After cleaning: the cats are sitting on the mats waiting for their owners
+2026-04-26 19:02:22,334 | INFO | Tokens: ['the', 'cats', 'are', 'sitting', 'on', 'the', 'mats', 'waiting', 'for', 'their', 'owners']
+2026-04-26 19:02:22,334 | INFO | After stopword removal: ['cats', 'sitting', 'mats', 'waiting', 'owners']
+2026-04-26 19:02:22,340 | INFO | After lemmatization: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 19:02:22,340 | INFO | After duplicate removal: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 19:02:22,340 | INFO | Final Output: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 19:02:22,340 | INFO | Pipeline started
+2026-04-26 19:02:22,340 | INFO | Raw Input: Running quickly, the athletes broke several world records.
+2026-04-26 19:02:22,341 | INFO | After contraction expansion: Running quickly, the athletes broke several world records.
+2026-04-26 19:02:22,341 | INFO | After cleaning: running quickly the athletes broke several world records
+2026-04-26 19:02:22,341 | INFO | Tokens: ['running', 'quickly', 'the', 'athletes', 'broke', 'several', 'world', 'records']
+2026-04-26 19:02:22,341 | INFO | After stopword removal: ['running', 'quickly', 'athletes', 'broke', 'several', 'world', 'records']
+2026-04-26 19:02:22,346 | INFO | After lemmatization: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 19:02:22,346 | INFO | After duplicate removal: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 19:02:22,346 | INFO | Final Output: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 19:02:22,346 | INFO | Pipeline started
+2026-04-26 19:02:22,346 | INFO | Raw Input: Machine learning models need clean and well-processed data.
+2026-04-26 19:02:22,346 | INFO | After contraction expansion: Machine learning models need clean and well-processed data.
+2026-04-26 19:02:22,346 | INFO | After cleaning: machine learning models need clean and well processed data
+2026-04-26 19:02:22,347 | INFO | Tokens: ['machine', 'learning', 'models', 'need', 'clean', 'and', 'well', 'processed', 'data']
+2026-04-26 19:02:22,347 | INFO | After stopword removal: ['machine', 'learning', 'models', 'need', 'clean', 'well', 'processed', 'data']
+2026-04-26 19:02:22,351 | INFO | After lemmatization: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 19:02:22,351 | INFO | After duplicate removal: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 19:02:22,351 | INFO | Final Output: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 19:02:22,351 | INFO | Pipeline started
+2026-04-26 19:02:22,351 | INFO | Raw Input: She was singing beautifully while the children danced joyfully.
+2026-04-26 19:02:22,351 | INFO | After contraction expansion: She was singing beautifully while the children danced joyfully.
+2026-04-26 19:02:22,351 | INFO | After cleaning: she was singing beautifully while the children danced joyfully
+2026-04-26 19:02:22,351 | INFO | Tokens: ['she', 'was', 'singing', 'beautifully', 'while', 'the', 'children', 'danced', 'joyfully']
+2026-04-26 19:02:22,351 | INFO | After stopword removal: ['singing', 'beautifully', 'children', 'danced', 'joyfully']
+2026-04-26 19:02:22,355 | INFO | After lemmatization: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 19:02:22,355 | INFO | After duplicate removal: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 19:02:22,355 | INFO | Final Output: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 19:02:22,355 | INFO | Pipeline started
+2026-04-26 19:02:22,355 | INFO | Raw Input: The companies are merging their databases for better results.
+2026-04-26 19:02:22,355 | INFO | After contraction expansion: The companies are merging their databases for better results.
+2026-04-26 19:02:22,355 | INFO | After cleaning: the companies are merging their databases for better results
+2026-04-26 19:02:22,355 | INFO | Tokens: ['the', 'companies', 'are', 'merging', 'their', 'databases', 'for', 'better', 'results']
+2026-04-26 19:02:22,356 | INFO | After stopword removal: ['companies', 'merging', 'databases', 'better', 'results']
+2026-04-26 19:02:22,361 | INFO | After lemmatization: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 19:02:22,361 | INFO | After duplicate removal: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 19:02:22,361 | INFO | Final Output: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 19:02:22,361 | INFO | Pipeline started
+2026-04-26 19:02:22,361 | INFO | Raw Input: Scientists are studying the effects of climate change on biodiversity.
+2026-04-26 19:02:22,362 | INFO | After contraction expansion: Scientists are studying the effects of climate change on biodiversity.
+2026-04-26 19:02:22,362 | INFO | After cleaning: scientists are studying the effects of climate change on biodiversity
+2026-04-26 19:02:22,362 | INFO | Tokens: ['scientists', 'are', 'studying', 'the', 'effects', 'of', 'climate', 'change', 'on', 'biodiversity']
+2026-04-26 19:02:22,362 | INFO | After stopword removal: ['scientists', 'studying', 'effects', 'climate', 'change', 'biodiversity']
+2026-04-26 19:02:22,366 | INFO | After lemmatization: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 19:02:22,366 | INFO | After duplicate removal: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 19:02:22,366 | INFO | Final Output: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 19:02:22,366 | INFO | Pipeline started
+2026-04-26 19:02:22,366 | INFO | Raw Input: The students were working harder than ever to pass their exams.
+2026-04-26 19:02:22,366 | INFO | After contraction expansion: The students were working harder than ever to pass their exams.
+2026-04-26 19:02:22,366 | INFO | After cleaning: the students were working harder than ever to pass their exams
+2026-04-26 19:02:22,366 | INFO | Tokens: ['the', 'students', 'were', 'working', 'harder', 'than', 'ever', 'to', 'pass', 'their', 'exams']
+2026-04-26 19:02:22,366 | INFO | After stopword removal: ['students', 'working', 'harder', 'ever', 'pass', 'exams']
+2026-04-26 19:02:22,370 | INFO | After lemmatization: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 19:02:22,370 | INFO | After duplicate removal: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 19:02:22,370 | INFO | Final Output: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 19:02:22,370 | INFO | Pipeline started
+2026-04-26 19:02:22,370 | INFO | Raw Input: New restaurants are opening in the city, offering amazing food choices.
+2026-04-26 19:02:22,371 | INFO | After contraction expansion: New restaurants are opening in the city, offering amazing food choices.
+2026-04-26 19:02:22,371 | INFO | After cleaning: new restaurants are opening in the city offering amazing food choices
+2026-04-26 19:02:22,371 | INFO | Tokens: ['new', 'restaurants', 'are', 'opening', 'in', 'the', 'city', 'offering', 'amazing', 'food', 'choices']
+2026-04-26 19:02:22,371 | INFO | After stopword removal: ['new', 'restaurants', 'opening', 'city', 'offering', 'amazing', 'food', 'choices']
+2026-04-26 19:02:22,375 | INFO | After lemmatization: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 19:02:22,375 | INFO | After duplicate removal: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 19:02:22,375 | INFO | Final Output: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 19:02:22,376 | INFO | Pipeline started
+2026-04-26 19:02:22,376 | INFO | Raw Input: The software developers built an incredible application using Python.
+2026-04-26 19:02:22,376 | INFO | After contraction expansion: The software developers built an incredible application using Python.
+2026-04-26 19:02:22,376 | INFO | After cleaning: the software developers built an incredible application using python
+2026-04-26 19:02:22,376 | INFO | Tokens: ['the', 'software', 'developers', 'built', 'an', 'incredible', 'application', 'using', 'python']
+2026-04-26 19:02:22,376 | INFO | After stopword removal: ['software', 'developers', 'built', 'incredible', 'application', 'using', 'python']
+2026-04-26 19:02:22,379 | INFO | After lemmatization: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 19:02:22,380 | INFO | After duplicate removal: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 19:02:22,380 | INFO | Final Output: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 19:02:22,380 | INFO | Pipeline started
+2026-04-26 19:02:22,380 | INFO | Raw Input: Dogs are running and playing in the park with their owners daily.
+2026-04-26 19:02:22,380 | INFO | After contraction expansion: Dogs are running and playing in the park with their owners daily.
+2026-04-26 19:02:22,380 | INFO | After cleaning: dogs are running and playing in the park with their owners daily
+2026-04-26 19:02:22,380 | INFO | Tokens: ['dogs', 'are', 'running', 'and', 'playing', 'in', 'the', 'park', 'with', 'their', 'owners', 'daily']
+2026-04-26 19:02:22,380 | INFO | After stopword removal: ['dogs', 'running', 'playing', 'park', 'owners', 'daily']
+2026-04-26 19:02:22,383 | INFO | After lemmatization: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 19:02:22,383 | INFO | After duplicate removal: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 19:02:22,383 | INFO | Final Output: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 19:02:22,383 | INFO | Pipeline started
+2026-04-26 19:02:22,383 | INFO | Raw Input: The researchers published their findings in a famous scientific journal.
+2026-04-26 19:02:22,383 | INFO | After contraction expansion: The researchers published their findings in a famous scientific journal.
+2026-04-26 19:02:22,383 | INFO | After cleaning: the researchers published their findings in a famous scientific journal
+2026-04-26 19:02:22,383 | INFO | Tokens: ['the', 'researchers', 'published', 'their', 'findings', 'in', 'famous', 'scientific', 'journal']
+2026-04-26 19:02:22,383 | INFO | After stopword removal: ['researchers', 'published', 'findings', 'famous', 'scientific', 'journal']
+2026-04-26 19:02:22,387 | INFO | After lemmatization: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 19:02:22,387 | INFO | After duplicate removal: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 19:02:22,387 | INFO | Final Output: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 19:02:22,387 | INFO | Pipeline started
+2026-04-26 19:02:22,387 | INFO | Raw Input: She is better at coding now after practicing consistently every day.
+2026-04-26 19:02:22,387 | INFO | After contraction expansion: She is better at coding now after practicing consistently every day.
+2026-04-26 19:02:22,387 | INFO | After cleaning: she is better at coding now after practicing consistently every day
+2026-04-26 19:02:22,387 | INFO | Tokens: ['she', 'is', 'better', 'at', 'coding', 'now', 'after', 'practicing', 'consistently', 'every', 'day']
+2026-04-26 19:02:22,387 | INFO | After stopword removal: ['better', 'coding', 'practicing', 'consistently', 'every', 'day']
+2026-04-26 19:02:22,390 | INFO | After lemmatization: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 19:02:22,390 | INFO | After duplicate removal: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 19:02:22,390 | INFO | Final Output: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 19:02:22,390 | INFO | Pipeline started
+2026-04-26 19:02:22,390 | INFO | Raw Input: The teams competed fiercely and played brilliantly in the final match.
+2026-04-26 19:02:22,391 | INFO | After contraction expansion: The teams competed fiercely and played brilliantly in the final match.
+2026-04-26 19:02:22,391 | INFO | After cleaning: the teams competed fiercely and played brilliantly in the final match
+2026-04-26 19:02:22,391 | INFO | Tokens: ['the', 'teams', 'competed', 'fiercely', 'and', 'played', 'brilliantly', 'in', 'the', 'final', 'match']
+2026-04-26 19:02:22,391 | INFO | After stopword removal: ['teams', 'competed', 'fiercely', 'played', 'brilliantly', 'final', 'match']
+2026-04-26 19:02:22,395 | INFO | After lemmatization: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 19:02:22,395 | INFO | After duplicate removal: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 19:02:22,395 | INFO | Final Output: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 19:02:22,395 | INFO | Pipeline started
+2026-04-26 19:02:22,395 | INFO | Raw Input: Children are learning faster with interactive and engaging digital tools.
+2026-04-26 19:02:22,395 | INFO | After contraction expansion: Children are learning faster with interactive and engaging digital tools.
+2026-04-26 19:02:22,395 | INFO | After cleaning: children are learning faster with interactive and engaging digital tools
+2026-04-26 19:02:22,396 | INFO | Tokens: ['children', 'are', 'learning', 'faster', 'with', 'interactive', 'and', 'engaging', 'digital', 'tools']
+2026-04-26 19:02:22,396 | INFO | After stopword removal: ['children', 'learning', 'faster', 'interactive', 'engaging', 'digital', 'tools']
+2026-04-26 19:02:22,398 | INFO | After lemmatization: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 19:02:22,398 | INFO | After duplicate removal: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 19:02:22,398 | INFO | Final Output: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 20:19:09,998 | INFO | Pipeline started
+2026-04-26 20:19:09,998 | INFO | Raw Input: I've been running, trying, and playing with better tools!!!
+2026-04-26 20:19:09,999 | INFO | After contraction expansion: I have been running, trying, and playing with better tools!!!
+2026-04-26 20:19:09,999 | INFO | After cleaning: i have been running trying and playing with better tools
+2026-04-26 20:19:09,999 | INFO | Tokens: ['have', 'been', 'running', 'trying', 'and', 'playing', 'with', 'better', 'tools']
+2026-04-26 20:19:09,999 | INFO | After stopword removal: ['running', 'trying', 'playing', 'better', 'tools']
+2026-04-26 20:19:10,008 | INFO | After lemmatization: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 20:19:10,008 | INFO | After duplicate removal: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 20:19:10,008 | INFO | Final Output: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 20:19:10,025 | INFO | Pipeline started
+2026-04-26 20:19:10,025 | INFO | Raw Input: I am loving the new AI tools! They are running amazingly well.
+2026-04-26 20:19:10,025 | INFO | After contraction expansion: I am loving the new AI tools! They are running amazingly well.
+2026-04-26 20:19:10,026 | INFO | After cleaning: i am loving the new ai tools they are running amazingly well
+2026-04-26 20:19:10,026 | INFO | Tokens: ['am', 'loving', 'the', 'new', 'ai', 'tools', 'they', 'are', 'running', 'amazingly', 'well']
+2026-04-26 20:19:10,026 | INFO | After stopword removal: ['loving', 'new', 'ai', 'tools', 'running', 'amazingly', 'well']
+2026-04-26 20:19:10,031 | INFO | After lemmatization: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 20:19:10,031 | INFO | After duplicate removal: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 20:19:10,032 | INFO | Final Output: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 20:19:10,032 | INFO | Pipeline started
+2026-04-26 20:19:10,032 | INFO | Raw Input: The cats are sitting on the mats, waiting for their owners.
+2026-04-26 20:19:10,032 | INFO | After contraction expansion: The cats are sitting on the mats, waiting for their owners.
+2026-04-26 20:19:10,032 | INFO | After cleaning: the cats are sitting on the mats waiting for their owners
+2026-04-26 20:19:10,032 | INFO | Tokens: ['the', 'cats', 'are', 'sitting', 'on', 'the', 'mats', 'waiting', 'for', 'their', 'owners']
+2026-04-26 20:19:10,032 | INFO | After stopword removal: ['cats', 'sitting', 'mats', 'waiting', 'owners']
+2026-04-26 20:19:10,037 | INFO | After lemmatization: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 20:19:10,037 | INFO | After duplicate removal: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 20:19:10,037 | INFO | Final Output: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 20:19:10,037 | INFO | Pipeline started
+2026-04-26 20:19:10,037 | INFO | Raw Input: Running quickly, the athletes broke several world records.
+2026-04-26 20:19:10,038 | INFO | After contraction expansion: Running quickly, the athletes broke several world records.
+2026-04-26 20:19:10,038 | INFO | After cleaning: running quickly the athletes broke several world records
+2026-04-26 20:19:10,038 | INFO | Tokens: ['running', 'quickly', 'the', 'athletes', 'broke', 'several', 'world', 'records']
+2026-04-26 20:19:10,038 | INFO | After stopword removal: ['running', 'quickly', 'athletes', 'broke', 'several', 'world', 'records']
+2026-04-26 20:19:10,043 | INFO | After lemmatization: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 20:19:10,043 | INFO | After duplicate removal: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 20:19:10,043 | INFO | Final Output: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 20:19:10,043 | INFO | Pipeline started
+2026-04-26 20:19:10,043 | INFO | Raw Input: Machine learning models need clean and well-processed data.
+2026-04-26 20:19:10,043 | INFO | After contraction expansion: Machine learning models need clean and well-processed data.
+2026-04-26 20:19:10,043 | INFO | After cleaning: machine learning models need clean and well processed data
+2026-04-26 20:19:10,044 | INFO | Tokens: ['machine', 'learning', 'models', 'need', 'clean', 'and', 'well', 'processed', 'data']
+2026-04-26 20:19:10,044 | INFO | After stopword removal: ['machine', 'learning', 'models', 'need', 'clean', 'well', 'processed', 'data']
+2026-04-26 20:19:10,048 | INFO | After lemmatization: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 20:19:10,049 | INFO | After duplicate removal: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 20:19:10,049 | INFO | Final Output: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 20:19:10,049 | INFO | Pipeline started
+2026-04-26 20:19:10,049 | INFO | Raw Input: She was singing beautifully while the children danced joyfully.
+2026-04-26 20:19:10,049 | INFO | After contraction expansion: She was singing beautifully while the children danced joyfully.
+2026-04-26 20:19:10,049 | INFO | After cleaning: she was singing beautifully while the children danced joyfully
+2026-04-26 20:19:10,049 | INFO | Tokens: ['she', 'was', 'singing', 'beautifully', 'while', 'the', 'children', 'danced', 'joyfully']
+2026-04-26 20:19:10,049 | INFO | After stopword removal: ['singing', 'beautifully', 'children', 'danced', 'joyfully']
+2026-04-26 20:19:10,053 | INFO | After lemmatization: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 20:19:10,053 | INFO | After duplicate removal: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 20:19:10,053 | INFO | Final Output: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 20:19:10,053 | INFO | Pipeline started
+2026-04-26 20:19:10,053 | INFO | Raw Input: The companies are merging their databases for better results.
+2026-04-26 20:19:10,054 | INFO | After contraction expansion: The companies are merging their databases for better results.
+2026-04-26 20:19:10,054 | INFO | After cleaning: the companies are merging their databases for better results
+2026-04-26 20:19:10,054 | INFO | Tokens: ['the', 'companies', 'are', 'merging', 'their', 'databases', 'for', 'better', 'results']
+2026-04-26 20:19:10,054 | INFO | After stopword removal: ['companies', 'merging', 'databases', 'better', 'results']
+2026-04-26 20:19:10,061 | INFO | After lemmatization: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 20:19:10,061 | INFO | After duplicate removal: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 20:19:10,061 | INFO | Final Output: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 20:19:10,061 | INFO | Pipeline started
+2026-04-26 20:19:10,061 | INFO | Raw Input: Scientists are studying the effects of climate change on biodiversity.
+2026-04-26 20:19:10,061 | INFO | After contraction expansion: Scientists are studying the effects of climate change on biodiversity.
+2026-04-26 20:19:10,061 | INFO | After cleaning: scientists are studying the effects of climate change on biodiversity
+2026-04-26 20:19:10,061 | INFO | Tokens: ['scientists', 'are', 'studying', 'the', 'effects', 'of', 'climate', 'change', 'on', 'biodiversity']
+2026-04-26 20:19:10,062 | INFO | After stopword removal: ['scientists', 'studying', 'effects', 'climate', 'change', 'biodiversity']
+2026-04-26 20:19:10,067 | INFO | After lemmatization: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 20:19:10,067 | INFO | After duplicate removal: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 20:19:10,067 | INFO | Final Output: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 20:19:10,067 | INFO | Pipeline started
+2026-04-26 20:19:10,067 | INFO | Raw Input: The students were working harder than ever to pass their exams.
+2026-04-26 20:19:10,067 | INFO | After contraction expansion: The students were working harder than ever to pass their exams.
+2026-04-26 20:19:10,067 | INFO | After cleaning: the students were working harder than ever to pass their exams
+2026-04-26 20:19:10,067 | INFO | Tokens: ['the', 'students', 'were', 'working', 'harder', 'than', 'ever', 'to', 'pass', 'their', 'exams']
+2026-04-26 20:19:10,068 | INFO | After stopword removal: ['students', 'working', 'harder', 'ever', 'pass', 'exams']
+2026-04-26 20:19:10,072 | INFO | After lemmatization: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 20:19:10,072 | INFO | After duplicate removal: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 20:19:10,072 | INFO | Final Output: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 20:19:10,072 | INFO | Pipeline started
+2026-04-26 20:19:10,073 | INFO | Raw Input: New restaurants are opening in the city, offering amazing food choices.
+2026-04-26 20:19:10,073 | INFO | After contraction expansion: New restaurants are opening in the city, offering amazing food choices.
+2026-04-26 20:19:10,073 | INFO | After cleaning: new restaurants are opening in the city offering amazing food choices
+2026-04-26 20:19:10,073 | INFO | Tokens: ['new', 'restaurants', 'are', 'opening', 'in', 'the', 'city', 'offering', 'amazing', 'food', 'choices']
+2026-04-26 20:19:10,073 | INFO | After stopword removal: ['new', 'restaurants', 'opening', 'city', 'offering', 'amazing', 'food', 'choices']
+2026-04-26 20:19:10,078 | INFO | After lemmatization: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 20:19:10,078 | INFO | After duplicate removal: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 20:19:10,078 | INFO | Final Output: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 20:19:10,079 | INFO | Pipeline started
+2026-04-26 20:19:10,079 | INFO | Raw Input: The software developers built an incredible application using Python.
+2026-04-26 20:19:10,079 | INFO | After contraction expansion: The software developers built an incredible application using Python.
+2026-04-26 20:19:10,079 | INFO | After cleaning: the software developers built an incredible application using python
+2026-04-26 20:19:10,079 | INFO | Tokens: ['the', 'software', 'developers', 'built', 'an', 'incredible', 'application', 'using', 'python']
+2026-04-26 20:19:10,079 | INFO | After stopword removal: ['software', 'developers', 'built', 'incredible', 'application', 'using', 'python']
+2026-04-26 20:19:10,083 | INFO | After lemmatization: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 20:19:10,083 | INFO | After duplicate removal: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 20:19:10,083 | INFO | Final Output: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 20:19:10,083 | INFO | Pipeline started
+2026-04-26 20:19:10,083 | INFO | Raw Input: Dogs are running and playing in the park with their owners daily.
+2026-04-26 20:19:10,084 | INFO | After contraction expansion: Dogs are running and playing in the park with their owners daily.
+2026-04-26 20:19:10,084 | INFO | After cleaning: dogs are running and playing in the park with their owners daily
+2026-04-26 20:19:10,084 | INFO | Tokens: ['dogs', 'are', 'running', 'and', 'playing', 'in', 'the', 'park', 'with', 'their', 'owners', 'daily']
+2026-04-26 20:19:10,084 | INFO | After stopword removal: ['dogs', 'running', 'playing', 'park', 'owners', 'daily']
+2026-04-26 20:19:10,087 | INFO | After lemmatization: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 20:19:10,088 | INFO | After duplicate removal: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 20:19:10,088 | INFO | Final Output: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 20:19:10,088 | INFO | Pipeline started
+2026-04-26 20:19:10,088 | INFO | Raw Input: The researchers published their findings in a famous scientific journal.
+2026-04-26 20:19:10,088 | INFO | After contraction expansion: The researchers published their findings in a famous scientific journal.
+2026-04-26 20:19:10,088 | INFO | After cleaning: the researchers published their findings in a famous scientific journal
+2026-04-26 20:19:10,088 | INFO | Tokens: ['the', 'researchers', 'published', 'their', 'findings', 'in', 'famous', 'scientific', 'journal']
+2026-04-26 20:19:10,088 | INFO | After stopword removal: ['researchers', 'published', 'findings', 'famous', 'scientific', 'journal']
+2026-04-26 20:19:10,093 | INFO | After lemmatization: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 20:19:10,093 | INFO | After duplicate removal: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 20:19:10,093 | INFO | Final Output: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 20:19:10,093 | INFO | Pipeline started
+2026-04-26 20:19:10,093 | INFO | Raw Input: She is better at coding now after practicing consistently every day.
+2026-04-26 20:19:10,094 | INFO | After contraction expansion: She is better at coding now after practicing consistently every day.
+2026-04-26 20:19:10,094 | INFO | After cleaning: she is better at coding now after practicing consistently every day
+2026-04-26 20:19:10,094 | INFO | Tokens: ['she', 'is', 'better', 'at', 'coding', 'now', 'after', 'practicing', 'consistently', 'every', 'day']
+2026-04-26 20:19:10,094 | INFO | After stopword removal: ['better', 'coding', 'practicing', 'consistently', 'every', 'day']
+2026-04-26 20:19:10,098 | INFO | After lemmatization: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 20:19:10,098 | INFO | After duplicate removal: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 20:19:10,098 | INFO | Final Output: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 20:19:10,098 | INFO | Pipeline started
+2026-04-26 20:19:10,098 | INFO | Raw Input: The teams competed fiercely and played brilliantly in the final match.
+2026-04-26 20:19:10,099 | INFO | After contraction expansion: The teams competed fiercely and played brilliantly in the final match.
+2026-04-26 20:19:10,099 | INFO | After cleaning: the teams competed fiercely and played brilliantly in the final match
+2026-04-26 20:19:10,099 | INFO | Tokens: ['the', 'teams', 'competed', 'fiercely', 'and', 'played', 'brilliantly', 'in', 'the', 'final', 'match']
+2026-04-26 20:19:10,099 | INFO | After stopword removal: ['teams', 'competed', 'fiercely', 'played', 'brilliantly', 'final', 'match']
+2026-04-26 20:19:10,104 | INFO | After lemmatization: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 20:19:10,104 | INFO | After duplicate removal: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 20:19:10,104 | INFO | Final Output: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 20:19:10,104 | INFO | Pipeline started
+2026-04-26 20:19:10,104 | INFO | Raw Input: Children are learning faster with interactive and engaging digital tools.
+2026-04-26 20:19:10,104 | INFO | After contraction expansion: Children are learning faster with interactive and engaging digital tools.
+2026-04-26 20:19:10,104 | INFO | After cleaning: children are learning faster with interactive and engaging digital tools
+2026-04-26 20:19:10,104 | INFO | Tokens: ['children', 'are', 'learning', 'faster', 'with', 'interactive', 'and', 'engaging', 'digital', 'tools']
+2026-04-26 20:19:10,105 | INFO | After stopword removal: ['children', 'learning', 'faster', 'interactive', 'engaging', 'digital', 'tools']
+2026-04-26 20:19:10,108 | INFO | After lemmatization: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 20:19:10,108 | INFO | After duplicate removal: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 20:19:10,108 | INFO | Final Output: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 20:36:25,307 | INFO | Pipeline started
+2026-04-26 20:36:25,308 | INFO | Raw Input: I've been running, trying, and playing with better tools!!!
+2026-04-26 20:36:25,309 | INFO | After contraction expansion: I have been running, trying, and playing with better tools!!!
+2026-04-26 20:36:25,309 | INFO | After cleaning: i have been running trying and playing with better tools
+2026-04-26 20:36:25,309 | INFO | Tokens: ['have', 'been', 'running', 'trying', 'and', 'playing', 'with', 'better', 'tools']
+2026-04-26 20:36:25,309 | INFO | After stopword removal: ['running', 'trying', 'playing', 'better', 'tools']
+2026-04-26 20:36:25,316 | INFO | After lemmatization: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 20:36:25,316 | INFO | After duplicate removal: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 20:36:25,316 | INFO | Final Output: ['run', 'try', 'play', 'well', 'tool']
+2026-04-26 20:36:25,336 | INFO | Pipeline started
+2026-04-26 20:36:25,336 | INFO | Raw Input: I am loving the new AI tools! They are running amazingly well.
+2026-04-26 20:36:25,337 | INFO | After contraction expansion: I am loving the new AI tools! They are running amazingly well.
+2026-04-26 20:36:25,337 | INFO | After cleaning: i am loving the new ai tools they are running amazingly well
+2026-04-26 20:36:25,337 | INFO | Tokens: ['am', 'loving', 'the', 'new', 'ai', 'tools', 'they', 'are', 'running', 'amazingly', 'well']
+2026-04-26 20:36:25,337 | INFO | After stopword removal: ['loving', 'new', 'ai', 'tools', 'running', 'amazingly', 'well']
+2026-04-26 20:36:25,343 | INFO | After lemmatization: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 20:36:25,344 | INFO | After duplicate removal: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 20:36:25,344 | INFO | Final Output: ['love', 'new', 'ai', 'tool', 'run', 'amazingly', 'well']
+2026-04-26 20:36:25,344 | INFO | Pipeline started
+2026-04-26 20:36:25,344 | INFO | Raw Input: The cats are sitting on the mats, waiting for their owners.
+2026-04-26 20:36:25,344 | INFO | After contraction expansion: The cats are sitting on the mats, waiting for their owners.
+2026-04-26 20:36:25,344 | INFO | After cleaning: the cats are sitting on the mats waiting for their owners
+2026-04-26 20:36:25,345 | INFO | Tokens: ['the', 'cats', 'are', 'sitting', 'on', 'the', 'mats', 'waiting', 'for', 'their', 'owners']
+2026-04-26 20:36:25,345 | INFO | After stopword removal: ['cats', 'sitting', 'mats', 'waiting', 'owners']
+2026-04-26 20:36:25,351 | INFO | After lemmatization: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 20:36:25,351 | INFO | After duplicate removal: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 20:36:25,351 | INFO | Final Output: ['cat', 'sit', 'mat', 'waiting', 'owner']
+2026-04-26 20:36:25,351 | INFO | Pipeline started
+2026-04-26 20:36:25,351 | INFO | Raw Input: Running quickly, the athletes broke several world records.
+2026-04-26 20:36:25,352 | INFO | After contraction expansion: Running quickly, the athletes broke several world records.
+2026-04-26 20:36:25,352 | INFO | After cleaning: running quickly the athletes broke several world records
+2026-04-26 20:36:25,352 | INFO | Tokens: ['running', 'quickly', 'the', 'athletes', 'broke', 'several', 'world', 'records']
+2026-04-26 20:36:25,352 | INFO | After stopword removal: ['running', 'quickly', 'athletes', 'broke', 'several', 'world', 'records']
+2026-04-26 20:36:25,358 | INFO | After lemmatization: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 20:36:25,359 | INFO | After duplicate removal: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 20:36:25,359 | INFO | Final Output: ['run', 'quickly', 'athlete', 'break', 'several', 'world', 'record']
+2026-04-26 20:36:25,359 | INFO | Pipeline started
+2026-04-26 20:36:25,359 | INFO | Raw Input: Machine learning models need clean and well-processed data.
+2026-04-26 20:36:25,359 | INFO | After contraction expansion: Machine learning models need clean and well-processed data.
+2026-04-26 20:36:25,360 | INFO | After cleaning: machine learning models need clean and well processed data
+2026-04-26 20:36:25,360 | INFO | Tokens: ['machine', 'learning', 'models', 'need', 'clean', 'and', 'well', 'processed', 'data']
+2026-04-26 20:36:25,360 | INFO | After stopword removal: ['machine', 'learning', 'models', 'need', 'clean', 'well', 'processed', 'data']
+2026-04-26 20:36:25,367 | INFO | After lemmatization: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 20:36:25,367 | INFO | After duplicate removal: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 20:36:25,367 | INFO | Final Output: ['machine', 'learning', 'model', 'need', 'clean', 'well', 'process', 'datum']
+2026-04-26 20:36:25,367 | INFO | Pipeline started
+2026-04-26 20:36:25,367 | INFO | Raw Input: She was singing beautifully while the children danced joyfully.
+2026-04-26 20:36:25,368 | INFO | After contraction expansion: She was singing beautifully while the children danced joyfully.
+2026-04-26 20:36:25,368 | INFO | After cleaning: she was singing beautifully while the children danced joyfully
+2026-04-26 20:36:25,368 | INFO | Tokens: ['she', 'was', 'singing', 'beautifully', 'while', 'the', 'children', 'danced', 'joyfully']
+2026-04-26 20:36:25,368 | INFO | After stopword removal: ['singing', 'beautifully', 'children', 'danced', 'joyfully']
+2026-04-26 20:36:25,375 | INFO | After lemmatization: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 20:36:25,376 | INFO | After duplicate removal: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 20:36:25,376 | INFO | Final Output: ['singe', 'beautifully', 'child', 'dance', 'joyfully']
+2026-04-26 20:36:25,376 | INFO | Pipeline started
+2026-04-26 20:36:25,376 | INFO | Raw Input: The companies are merging their databases for better results.
+2026-04-26 20:36:25,377 | INFO | After contraction expansion: The companies are merging their databases for better results.
+2026-04-26 20:36:25,377 | INFO | After cleaning: the companies are merging their databases for better results
+2026-04-26 20:36:25,377 | INFO | Tokens: ['the', 'companies', 'are', 'merging', 'their', 'databases', 'for', 'better', 'results']
+2026-04-26 20:36:25,377 | INFO | After stopword removal: ['companies', 'merging', 'databases', 'better', 'results']
+2026-04-26 20:36:25,387 | INFO | After lemmatization: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 20:36:25,387 | INFO | After duplicate removal: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 20:36:25,387 | INFO | Final Output: ['company', 'merge', 'database', 'well', 'result']
+2026-04-26 20:36:25,387 | INFO | Pipeline started
+2026-04-26 20:36:25,387 | INFO | Raw Input: Scientists are studying the effects of climate change on biodiversity.
+2026-04-26 20:36:25,388 | INFO | After contraction expansion: Scientists are studying the effects of climate change on biodiversity.
+2026-04-26 20:36:25,388 | INFO | After cleaning: scientists are studying the effects of climate change on biodiversity
+2026-04-26 20:36:25,388 | INFO | Tokens: ['scientists', 'are', 'studying', 'the', 'effects', 'of', 'climate', 'change', 'on', 'biodiversity']
+2026-04-26 20:36:25,388 | INFO | After stopword removal: ['scientists', 'studying', 'effects', 'climate', 'change', 'biodiversity']
+2026-04-26 20:36:25,392 | INFO | After lemmatization: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 20:36:25,393 | INFO | After duplicate removal: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 20:36:25,393 | INFO | Final Output: ['scientist', 'study', 'effect', 'climate', 'change', 'biodiversity']
+2026-04-26 20:36:25,393 | INFO | Pipeline started
+2026-04-26 20:36:25,393 | INFO | Raw Input: The students were working harder than ever to pass their exams.
+2026-04-26 20:36:25,393 | INFO | After contraction expansion: The students were working harder than ever to pass their exams.
+2026-04-26 20:36:25,393 | INFO | After cleaning: the students were working harder than ever to pass their exams
+2026-04-26 20:36:25,393 | INFO | Tokens: ['the', 'students', 'were', 'working', 'harder', 'than', 'ever', 'to', 'pass', 'their', 'exams']
+2026-04-26 20:36:25,393 | INFO | After stopword removal: ['students', 'working', 'harder', 'ever', 'pass', 'exams']
+2026-04-26 20:36:25,398 | INFO | After lemmatization: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 20:36:25,398 | INFO | After duplicate removal: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 20:36:25,398 | INFO | Final Output: ['student', 'work', 'hard', 'ever', 'pass', 'exam']
+2026-04-26 20:36:25,398 | INFO | Pipeline started
+2026-04-26 20:36:25,398 | INFO | Raw Input: New restaurants are opening in the city, offering amazing food choices.
+2026-04-26 20:36:25,398 | INFO | After contraction expansion: New restaurants are opening in the city, offering amazing food choices.
+2026-04-26 20:36:25,398 | INFO | After cleaning: new restaurants are opening in the city offering amazing food choices
+2026-04-26 20:36:25,398 | INFO | Tokens: ['new', 'restaurants', 'are', 'opening', 'in', 'the', 'city', 'offering', 'amazing', 'food', 'choices']
+2026-04-26 20:36:25,398 | INFO | After stopword removal: ['new', 'restaurants', 'opening', 'city', 'offering', 'amazing', 'food', 'choices']
+2026-04-26 20:36:25,403 | INFO | After lemmatization: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 20:36:25,403 | INFO | After duplicate removal: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 20:36:25,403 | INFO | Final Output: ['new', 'restaurant', 'open', 'city', 'offer', 'amazing', 'food', 'choice']
+2026-04-26 20:36:25,403 | INFO | Pipeline started
+2026-04-26 20:36:25,403 | INFO | Raw Input: The software developers built an incredible application using Python.
+2026-04-26 20:36:25,403 | INFO | After contraction expansion: The software developers built an incredible application using Python.
+2026-04-26 20:36:25,403 | INFO | After cleaning: the software developers built an incredible application using python
+2026-04-26 20:36:25,403 | INFO | Tokens: ['the', 'software', 'developers', 'built', 'an', 'incredible', 'application', 'using', 'python']
+2026-04-26 20:36:25,404 | INFO | After stopword removal: ['software', 'developers', 'built', 'incredible', 'application', 'using', 'python']
+2026-04-26 20:36:25,407 | INFO | After lemmatization: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 20:36:25,407 | INFO | After duplicate removal: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 20:36:25,407 | INFO | Final Output: ['software', 'developer', 'build', 'incredible', 'application', 'use', 'python']
+2026-04-26 20:36:25,407 | INFO | Pipeline started
+2026-04-26 20:36:25,407 | INFO | Raw Input: Dogs are running and playing in the park with their owners daily.
+2026-04-26 20:36:25,408 | INFO | After contraction expansion: Dogs are running and playing in the park with their owners daily.
+2026-04-26 20:36:25,408 | INFO | After cleaning: dogs are running and playing in the park with their owners daily
+2026-04-26 20:36:25,408 | INFO | Tokens: ['dogs', 'are', 'running', 'and', 'playing', 'in', 'the', 'park', 'with', 'their', 'owners', 'daily']
+2026-04-26 20:36:25,408 | INFO | After stopword removal: ['dogs', 'running', 'playing', 'park', 'owners', 'daily']
+2026-04-26 20:36:25,410 | INFO | After lemmatization: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 20:36:25,411 | INFO | After duplicate removal: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 20:36:25,411 | INFO | Final Output: ['dog', 'run', 'play', 'park', 'owner', 'daily']
+2026-04-26 20:36:25,411 | INFO | Pipeline started
+2026-04-26 20:36:25,411 | INFO | Raw Input: The researchers published their findings in a famous scientific journal.
+2026-04-26 20:36:25,411 | INFO | After contraction expansion: The researchers published their findings in a famous scientific journal.
+2026-04-26 20:36:25,411 | INFO | After cleaning: the researchers published their findings in a famous scientific journal
+2026-04-26 20:36:25,411 | INFO | Tokens: ['the', 'researchers', 'published', 'their', 'findings', 'in', 'famous', 'scientific', 'journal']
+2026-04-26 20:36:25,411 | INFO | After stopword removal: ['researchers', 'published', 'findings', 'famous', 'scientific', 'journal']
+2026-04-26 20:36:25,415 | INFO | After lemmatization: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 20:36:25,415 | INFO | After duplicate removal: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 20:36:25,415 | INFO | Final Output: ['researcher', 'publish', 'finding', 'famous', 'scientific', 'journal']
+2026-04-26 20:36:25,415 | INFO | Pipeline started
+2026-04-26 20:36:25,415 | INFO | Raw Input: She is better at coding now after practicing consistently every day.
+2026-04-26 20:36:25,415 | INFO | After contraction expansion: She is better at coding now after practicing consistently every day.
+2026-04-26 20:36:25,415 | INFO | After cleaning: she is better at coding now after practicing consistently every day
+2026-04-26 20:36:25,415 | INFO | Tokens: ['she', 'is', 'better', 'at', 'coding', 'now', 'after', 'practicing', 'consistently', 'every', 'day']
+2026-04-26 20:36:25,416 | INFO | After stopword removal: ['better', 'coding', 'practicing', 'consistently', 'every', 'day']
+2026-04-26 20:36:25,419 | INFO | After lemmatization: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 20:36:25,419 | INFO | After duplicate removal: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 20:36:25,419 | INFO | Final Output: ['well', 'code', 'practice', 'consistently', 'every', 'day']
+2026-04-26 20:36:25,419 | INFO | Pipeline started
+2026-04-26 20:36:25,419 | INFO | Raw Input: The teams competed fiercely and played brilliantly in the final match.
+2026-04-26 20:36:25,420 | INFO | After contraction expansion: The teams competed fiercely and played brilliantly in the final match.
+2026-04-26 20:36:25,420 | INFO | After cleaning: the teams competed fiercely and played brilliantly in the final match
+2026-04-26 20:36:25,420 | INFO | Tokens: ['the', 'teams', 'competed', 'fiercely', 'and', 'played', 'brilliantly', 'in', 'the', 'final', 'match']
+2026-04-26 20:36:25,420 | INFO | After stopword removal: ['teams', 'competed', 'fiercely', 'played', 'brilliantly', 'final', 'match']
+2026-04-26 20:36:25,425 | INFO | After lemmatization: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 20:36:25,425 | INFO | After duplicate removal: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 20:36:25,425 | INFO | Final Output: ['team', 'compete', 'fiercely', 'play', 'brilliantly', 'final', 'match']
+2026-04-26 20:36:25,425 | INFO | Pipeline started
+2026-04-26 20:36:25,425 | INFO | Raw Input: Children are learning faster with interactive and engaging digital tools.
+2026-04-26 20:36:25,425 | INFO | After contraction expansion: Children are learning faster with interactive and engaging digital tools.
+2026-04-26 20:36:25,425 | INFO | After cleaning: children are learning faster with interactive and engaging digital tools
+2026-04-26 20:36:25,425 | INFO | Tokens: ['children', 'are', 'learning', 'faster', 'with', 'interactive', 'and', 'engaging', 'digital', 'tools']
+2026-04-26 20:36:25,425 | INFO | After stopword removal: ['children', 'learning', 'faster', 'interactive', 'engaging', 'digital', 'tools']
+2026-04-26 20:36:25,428 | INFO | After lemmatization: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 20:36:25,428 | INFO | After duplicate removal: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']
+2026-04-26 20:36:25,428 | INFO | Final Output: ['child', 'learn', 'fast', 'interactive', 'engaging', 'digital', 'tool']

@@ -1,162 +1,95 @@
 import streamlit as st
 import pickle
 import numpy as np
-import pandas as pd
 import re
 import unicodedata
 from langdetect import detect
 
-# =========================
-# LOAD MODEL
-# =========================
-@st.cache_resource
-def load_model():
-    with open("language_model.pkl", "rb") as f:
-        model = pickle.load(f)
-    return model
+# ---------------- LOAD MODEL ----------------
+model = pickle.load(open("language_model.pkl", "rb"))
+label_encoder = pickle.load(open("label_encoder.pkl", "rb"))
 
-model = load_model()
-
-# =========================
-# PREPROCESS
-# =========================
+# ---------------- PREPROCESS ----------------
 def preprocess_text(text):
     if not isinstance(text, str):
         return ""
 
     text = unicodedata.normalize("NFC", text)
     text = text.lower()
-    text = re.sub(r"[\x00-\x1f\x7f]", "", text)
-    text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r'[\x00-\x1f\x7f]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    text = re.sub(r'[^\w\s\u0600-\u06FF\u0750-\u077F]', '', text)
+
     return text
 
-# =========================
-# CORE FUNCTIONS
-# =========================
-def predict(text):
-    processed = preprocess_text(text)
-    return model.predict([processed])[0]
+# ---------------- PREDICT ----------------
+def predict_language(text):
+    text = preprocess_text(text)
 
+    if len(text.strip()) < 2:
+        return "Unknown / Too Short Text", {}
 
+    proba = model.predict_proba([text])[0]
+    classes = model.classes_
+
+    idx = np.argmax(proba)
+    confidence = proba[idx]
+
+    language = label_encoder.inverse_transform([classes[idx]])[0]
+
+    return f"{language} ({round(confidence,2)})", proba
+
+# ---------------- TOP-2 ----------------
 def predict_top2(text):
-    processed = preprocess_text(text)
+    text = preprocess_text(text)
 
-    if hasattr(model.named_steps["model"], "predict_proba"):
-        probs = model.predict_proba([processed])[0]
-        classes = model.named_steps["model"].classes_
+    proba = model.predict_proba([text])[0]
+    classes = model.classes_
 
-        top2_idx = np.argsort(probs)[-2:][::-1]
+    top2 = np.argsort(proba)[-2:][::-1]
 
-        return [
-            (classes[top2_idx[0]], probs[top2_idx[0]]),
-            (classes[top2_idx[1]], probs[top2_idx[1]])
-        ]
-    return None
+    return [
+        (label_encoder.inverse_transform([classes[i]])[0], round(proba[i], 3))
+        for i in top2
+    ]
 
+# ---------------- UI ----------------
+st.set_page_config(page_title="Language Detection", layout="centered")
 
-def compare(text):
-    my_pred = predict(text)
+st.title("🌍 Multilingual Language Detection App")
+st.write("Detect language from text using Machine Learning + NLP")
 
-    try:
-        ld = detect(text)
-    except:
-        ld = "Error"
+text = st.text_area("Enter your text here")
 
-    return my_pred, ld
+if st.button("Predict Language"):
+    if text.strip() == "":
+        st.warning("Please enter some text")
+    else:
+        result, _ = predict_language(text)
+        st.success(f"Predicted Language: {result}")
 
+# ---------------- TOP 2 ----------------
+if st.button("Show Top-2 Predictions"):
+    if text.strip() == "":
+        st.warning("Please enter text")
+    else:
+        results = predict_top2(text)
 
-def batch_predict(df):
-    results = []
+        st.write("Top 2 Predictions:")
+        for lang, prob in results:
+            st.write(f"{lang} → {prob}")
 
-    for text in df["Text"]:
-        pred = predict(text)
-
-        top2 = predict_top2(text)
-        if top2:
-            top1, p1 = top2[0]
-            top2_lang, p2 = top2[1]
-        else:
-            top1, p1, top2_lang, p2 = None, None, None, None
-
+# ---------------- LANGDETECT COMPARISON ----------------
+if st.button("Compare with LangDetect"):
+    if text.strip() == "":
+        st.warning("Please enter text")
+    else:
         try:
             ld = detect(text)
         except:
             ld = "Error"
 
-        results.append([pred, p1, top2_lang, p2, ld])
+        ml_result, _ = predict_language(text)
 
-    df[["Prediction", "Top1_Conf", "Second_Lang", "Second_Conf", "Langdetect"]] = results
-    return df
-
-# =========================
-# STREAMLIT UI (CLI STYLE)
-# =========================
-st.title("🌍 Language Detection model")
-st.write("Use commands like: predict, top2, compare, batch")
-
-command = st.text_input("Enter command:")
-
-# =========================
-# SINGLE TEXT INPUT
-# =========================
-if command in ["predict", "top2", "compare"]:
-
-    text = st.text_area("Enter text")
-
-    if st.button("Run"):
-
-        if command == "predict":
-            st.success(f"Predicted Language: {predict(text)}")
-
-        elif command == "top2":
-            result = predict_top2(text)
-            if result:
-                st.subheader("Top 2 Predictions")
-                for lang, prob in result:
-                    st.write(f"{lang}: {prob:.4f}")
-
-        elif command == "compare":
-            my, ld = compare(text)
-            st.write("Your Model:", my)
-            st.write("Langdetect:", ld)
-
-# =========================
-# BATCH MODE
-# =========================
-elif command == "batch":
-
-    file = st.file_uploader("Upload CSV (must contain 'Text' column)", type=["csv"])
-
-    if file is not None:
-        df = pd.read_csv(file)
-
-        if "Text" not in df.columns:
-            st.error("CSV must contain 'Text' column")
-        else:
-            if st.button("Run Batch Prediction"):
-                result_df = batch_predict(df)
-                st.dataframe(result_df)
-
-                csv = result_df.to_csv(index=False).encode("utf-8")
-                st.download_button(
-                    "Download Results",
-                    csv,
-                    "predictions.csv",
-                    "text/csv"
-                )
-
-# =========================
-# HELP MENU
-# =========================
-elif command == "help" or command == "":
-    st.info("""
-    📌 Available Commands:
-
-    - predict → single prediction
-    - top2 → top 2 languages
-    - compare → compare with langdetect
-    - batch → CSV batch prediction
-
-    Example:
-    Enter: predict
-    """)
+        st.write("Model Prediction:", ml_result)
+        st.write("LangDetect:", ld)
