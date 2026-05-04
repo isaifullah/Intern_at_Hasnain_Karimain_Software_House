@@ -1,0 +1,5 @@
+langdetect==1.0.9
+streamlit==1.57.0
+streamlit==1.55.0
+streamlit==1.56.0
+tabulate==0.10.0
