@@ -1,0 +1,10 @@
+{
+  "best_model_name": "Logistic Regression",
+  "best_f1_score": 0.9671476526439725,
+  "features_count": 10000,
+  "training_samples": 50036,
+  "test_samples": 12510,
+  "cv_mean_f1": 0.9661459262982938,
+  "cv_std_f1": 0.0015167674692607414,
+  "roc_auc": 0.9812505172119214
+}
