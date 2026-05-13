@@ -202,8 +202,8 @@ email-classifier/
 ## Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/isaifullah/email-classifier.git
-cd email-classifier
+git clone https://github.com/isaifullah/05_email_classifier.git
+cd 05_email_classifier
 ```
 
 ---
