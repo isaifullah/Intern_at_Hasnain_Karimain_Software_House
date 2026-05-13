@@ -1,6 +1,6 @@
 """
 Email Classification System - Streamlit Web Application
-Complete version with Single Prediction, Batch Processing, and Analytics tabs
+Professional UI with Modern Design
 """
 
 import streamlit as st
@@ -14,68 +14,66 @@ import plotly.graph_objects as go
 import base64
 from datetime import datetime
 import os
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Page config
 st.set_page_config(
     page_title="Email Classifier",
     page_icon="📧",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-# Custom CSS - Improved compact design
+# Custom CSS - Dark Modern Theme
 st.markdown("""
 <style>
-    /* Main header */
+    /* Main background */
+    .stApp {
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    }
+    
+    /* Hide sidebar */
+    [data-testid="stSidebar"] {
+        display: none;
+    }
+    
+    /* Header */
     .main-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1rem;
-        border-radius: 12px;
+        padding: 2rem;
+        border-radius: 20px;
         color: white;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
     .main-header h1 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         margin: 0;
+        font-weight: bold;
     }
     .main-header p {
-        font-size: 0.8rem;
-        margin: 0.3rem 0 0 0;
-    }
-    
-    /* Prediction boxes */
-    .prediction-box {
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 1rem 0;
-        text-align: center;
-    }
-    .spam { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
-    .promotion { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: white; }
-    .social { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
-    .important { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; }
-    .uncertain { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; }
-    
-    /* Sidebar compact metrics */
-    .compact-metric {
-        background: #2d2d44;
-        padding: 0.4rem;
-        border-radius: 8px;
-        text-align: center;
-        margin: 0.2rem 0;
-    }
-    .compact-metric label {
-        font-size: 0.7rem;
-        color: #aaa;
-        display: block;
-    }
-    .compact-metric value {
         font-size: 1rem;
+        margin: 0.5rem 0 0 0;
+        opacity: 0.9;
+    }
+    
+    /* Tab styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 1rem;
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        padding: 0.5rem;
+    }
+    .stTabs [data-baseweb="tab"] {
+        background: transparent;
+        border-radius: 10px;
+        padding: 0.5rem 1.5rem;
         font-weight: bold;
+        color: #ccc;
+    }
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        display: block;
     }
     
     /* Button styling */
@@ -84,9 +82,108 @@ st.markdown("""
         color: white;
         font-weight: bold;
         border: none;
-        border-radius: 8px;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        border-radius: 10px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        transition: transform 0.2s;
+    }
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+    }
+    
+    /* Text area styling */
+    .stTextArea textarea {
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        color: white;
+    }
+    .stTextArea textarea:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 10px rgba(102,126,234,0.3);
+    }
+    
+    /* Prediction boxes */
+    .prediction-box {
+        padding: 2rem;
+        border-radius: 20px;
+        margin: 1rem 0;
+        text-align: center;
+        animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .spam { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+    .promotion { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: white; }
+    .social { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+    .important { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; }
+    .uncertain { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; }
+    
+    .prediction-box h2 {
+        font-size: 3rem;
+        margin: 0;
+        font-weight: bold;
+    }
+    .prediction-box p {
+        font-size: 1rem;
+        margin: 0.5rem 0 0 0;
+        opacity: 0.9;
+    }
+    
+    /* Metric cards */
+    .metric-card {
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    /* Threshold row - professional compact */
+    .threshold-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255,255,255,0.05);
+        border-radius: 40px;
+        padding: 0.3rem 1rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .threshold-label {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.6);
+        font-weight: 500;
+    }
+    .threshold-value {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 0.2rem 0.8rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: white;
+    }
+    .threshold-slider-container {
+        flex: 1;
+        margin: 0 1rem;
+    }
+    .threshold-range-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.6rem;
+        color: rgba(255,255,255,0.4);
+        margin-top: 0.2rem;
+    }
+    
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 1.5rem;
+        color: rgba(255,255,255,0.6);
+        font-size: 0.8rem;
+        margin-top: 2rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -223,105 +320,72 @@ def predict_email(text, model, vectorizer, label_encoder, threshold=0.65):
     }
 
 # ============================================
-# SIDEBAR - COMPACT VERSION
-# ============================================
-with st.sidebar:
-    st.markdown("### 📧 Email Classifier")
-    
-    model, vectorizer, label_encoder = load_models()
-    
-    if model is None:
-        st.error("Models not loaded!")
-        st.stop()
-    
-    st.markdown("---")
-    
-    # Compact model info
-    st.markdown("#### 🤖 Model Info")
-    
-    st.markdown("""
-    <div class="compact-metric">
-        <label>Model</label>
-        <value>Logistic Regression</value>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="compact-metric">
-        <label>F1 Score</label>
-        <value>0.95</value>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="compact-metric">
-        <label>Categories</label>
-        <value>4</value>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="compact-metric">
-        <label>Features</label>
-        <value>15K</value>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("---")
-    
-    # Settings
-    st.markdown("#### ⚙️ Settings")
-    threshold = st.slider(
-        "Confidence Threshold",
-        0.5, 0.95, 0.65, 0.05
-    )
-    
-    st.markdown("---")
-    st.caption("ML-powered classification | Logistic Regression")
-
-# ============================================
-# MAIN HEADER
+# MAIN APP
 # ============================================
 st.markdown("""
 <div class="main-header">
     <h1>📧 Email Classification System</h1>
-    <p>Classify emails as Spam, Promotion, Social, or Important</p>
+    <p>AI-Powered Email Categorization | Spam • Promotion • Social • Important</p>
 </div>
 """, unsafe_allow_html=True)
 
-# ============================================
-# THREE TABS - Analytics TAB RESTORED
-# ============================================
+# Load models
+model, vectorizer, label_encoder = load_models()
+
+if model is None:
+    st.error("❌ Failed to load models. Please run training first.")
+    st.stop()
+
+# Tabs
 tab1, tab2, tab3 = st.tabs(["🔍 Single Prediction", "📁 Batch Processing", "📊 Analytics"])
 
 # ============================================
 # TAB 1: SINGLE EMAIL
 # ============================================
 with tab1:
-    st.markdown("### 📝 Enter Email Content")
+    # Professional threshold row
+    col_thresh1, col_thresh2, col_thresh3 = st.columns([1, 3, 1])
+    with col_thresh2:
+        threshold = st.slider(
+            "Confidence Threshold",
+            min_value=0.50,
+            max_value=0.95,
+            value=0.65,
+            step=0.05,
+            key="threshold_single",
+            help="Higher threshold = fewer but more accurate predictions"
+        )
+        st.markdown(f"""
+        <div style="display: flex; justify-content: space-between; margin-top: -0.8rem;">
+            <span style="font-size: 0.7rem; color: rgba(255,255,255,0.4);">Less Strict (50%)</span>
+            <span style="font-size: 0.7rem; background: linear-gradient(135deg, #667eea, #764ba2); padding: 0.1rem 0.5rem; border-radius: 20px;">Current: {int(threshold*100)}%</span>
+            <span style="font-size: 0.7rem; color: rgba(255,255,255,0.4);">More Strict (95%)</span>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### ✍️ Enter Email Content")
     
     email_text = st.text_area(
         "",
-        height=200,
+        height=180,
         placeholder="Paste your email content here...\n\nExample: Congratulations! You've won $1,000,000! Click here to claim your prize now!!!",
         key="email_input"
     )
     
-    col1, col2 = st.columns([1, 3])
-    with col1:
+    col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 3])
+    with col_btn1:
+        analyze_btn = st.button("🔍 Classify", use_container_width=True, type="primary")
+    with col_btn2:
         clear_btn = st.button("🗑️ Clear", use_container_width=True)
-    with col2:
-        analyze_btn = st.button("🔍 Classify Email", use_container_width=True, type="primary")
     
     if clear_btn:
         st.session_state.email_input = ""
         st.rerun()
     
     if analyze_btn and email_text:
-        with st.spinner("Analyzing..."):
+        with st.spinner("Analyzing email content..."):
             result = predict_email(email_text, model, vectorizer, label_encoder, threshold)
             
-            # Prediction box
             st.markdown(f"""
             <div class="prediction-box {result['box_class']}">
                 <h2>{result['display']}</h2>
@@ -332,33 +396,47 @@ with tab1:
             if result['message']:
                 st.warning(result['message'])
             
-            # Metrics
             col_m1, col_m2 = st.columns(2)
             with col_m1:
-                st.metric("Confidence", f"{result['confidence']:.1%}")
+                st.markdown(f"""
+                <div class="metric-card">
+                    <p style="margin:0; font-size:0.8rem; opacity:0.7;">Confidence Score</p>
+                    <p style="margin:0; font-size:2rem; font-weight:bold;">{result['confidence']:.1%}</p>
+                </div>
+                """, unsafe_allow_html=True)
             with col_m2:
-                status = "🟢 High" if result['confidence'] >= threshold else "🟡 Low"
-                st.metric("Confidence Level", status)
+                status_color = "#43e97b" if result['confidence'] >= threshold else "#fda085"
+                status_text = "Above Threshold" if result['confidence'] >= threshold else "Below Threshold"
+                st.markdown(f"""
+                <div class="metric-card">
+                    <p style="margin:0; font-size:0.8rem; opacity:0.7;">Threshold Status</p>
+                    <p style="margin:0; font-size:1.3rem; font-weight:bold; color:{status_color};">{status_text}</p>
+                </div>
+                """, unsafe_allow_html=True)
             
-            # Gauge
             fig = go.Figure(go.Indicator(
                 mode="gauge+number",
                 value=result['confidence'] * 100,
-                title={'text': "Confidence Score"},
+                title={'text': "Confidence Gauge", 'font': {'color': 'white'}},
                 gauge={
-                    'axis': {'range': [0, 100]},
+                    'axis': {'range': [0, 100], 'tickcolor': 'white'},
                     'bar': {'color': "#667eea"},
+                    'bgcolor': "rgba(255,255,255,0.1)",
                     'steps': [
-                        {'range': [0, threshold*100], 'color': "#ffebee"},
-                        {'range': [threshold*100, 100], 'color': "#e8f5e9"}
-                    ]
+                        {'range': [0, threshold*100], 'color': "rgba(245,87,108,0.3)"},
+                        {'range': [threshold*100, 100], 'color': "rgba(67,233,123,0.3)"}
+                    ],
+                    'threshold': {
+                        'line': {'color': "white", 'width': 4},
+                        'thickness': 0.75,
+                        'value': threshold * 100
+                    }
                 }
             ))
-            fig.update_layout(height=200, margin=dict(l=20, r=20, t=40, b=20))
+            fig.update_layout(height=250, margin=dict(l=20, r=20, t=50, b=20), paper_bgcolor="rgba(0,0,0,0)", font={'color': 'white'})
             st.plotly_chart(fig, use_container_width=True)
             
-            # Probability bars
-            st.markdown("#### 📊 Probability by Category")
+            st.markdown("#### 📊 Probability Distribution")
             prob_df = pd.DataFrame({
                 'Category': list(result['probabilities'].keys()),
                 'Probability': list(result['probabilities'].values())
@@ -371,55 +449,85 @@ with tab1:
                          color='Category', color_discrete_sequence=bar_colors,
                          text=prob_df['Probability'].apply(lambda x: f'{x:.1%}'))
             fig.update_traces(textposition='outside')
-            fig.update_layout(height=300, showlegend=False)
+            fig.update_layout(
+                height=350,
+                showlegend=False,
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                font={'color': 'white'},
+                xaxis={'gridcolor': 'rgba(255,255,255,0.1)'},
+                yaxis={'gridcolor': 'rgba(255,255,255,0.1)'}
+            )
             st.plotly_chart(fig, use_container_width=True)
+    
+    elif analyze_btn and not email_text:
+        st.warning("⚠️ Please enter email content to classify")
 
 # ============================================
 # TAB 2: BATCH PROCESSING
 # ============================================
 with tab2:
+    # Professional threshold row
+    col_thresh1, col_thresh2, col_thresh3 = st.columns([1, 3, 1])
+    with col_thresh2:
+        threshold_batch = st.slider(
+            "Confidence Threshold",
+            min_value=0.50,
+            max_value=0.95,
+            value=0.65,
+            step=0.05,
+            key="threshold_batch",
+            help="Higher threshold = fewer but more accurate predictions"
+        )
+        st.markdown(f"""
+        <div style="display: flex; justify-content: space-between; margin-top: -0.8rem;">
+            <span style="font-size: 0.7rem; color: rgba(255,255,255,0.4);">Less Strict (50%)</span>
+            <span style="font-size: 0.7rem; background: linear-gradient(135deg, #667eea, #764ba2); padding: 0.1rem 0.5rem; border-radius: 20px;">Current: {int(threshold_batch*100)}%</span>
+            <span style="font-size: 0.7rem; color: rgba(255,255,255,0.4);">More Strict (95%)</span>
+        </div>
+        """, unsafe_allow_html=True)
+    
     st.markdown("### 📁 Batch Email Classification")
-    st.write("Upload a CSV file with a **'text'** column")
+    st.markdown("Upload a CSV file with a **'text'** column containing emails to classify")
     
     uploaded_file = st.file_uploader("Choose CSV file", type="csv")
     
     if uploaded_file is not None:
         df = pd.read_csv(uploaded_file)
-        st.write(f"📊 Loaded {len(df)} rows")
+        st.success(f"✅ Loaded {len(df)} rows")
         
-        with st.expander("Preview uploaded data"):
+        with st.expander("📋 Preview Data"):
             st.dataframe(df.head())
         
         if 'text' not in df.columns:
-            st.error("CSV must have a 'text' column")
+            st.error("❌ CSV must have a 'text' column")
             available = df.columns.tolist()
-            selected = st.selectbox("Select text column:", available)
-            if st.button("Use this column"):
-                df.rename(columns={selected: 'text'}, inplace=True)
-                st.rerun()
+            st.info(f"Available columns: {', '.join(available)}")
         else:
-            if st.button("🚀 Process Batch", use_container_width=True):
+            if st.button("🚀 Start Batch Processing", use_container_width=True):
                 with st.spinner(f"Processing {len(df)} emails..."):
                     results = []
+                    progress_bar = st.progress(0)
                     for idx, row in df.iterrows():
-                        result = predict_email(str(row['text']), model, vectorizer, label_encoder, threshold)
+                        result = predict_email(str(row['text']), model, vectorizer, label_encoder, threshold_batch)
                         results.append(result)
+                        progress_bar.progress((idx + 1) / len(df))
                     
                     df['prediction'] = [r['display'] for r in results]
                     df['confidence'] = [r['confidence'] for r in results]
                     
                     st.success("✅ Processing complete!")
+                    
+                    st.markdown("#### 📊 Results Preview")
                     st.dataframe(df[['text', 'prediction', 'confidence']].head(20))
                     
-                    # Download button
                     csv = df.to_csv(index=False)
                     b64 = base64.b64encode(csv.encode()).decode()
                     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                    href = f'<a href="data:file/csv;base64,{b64}" download="classified_emails_{timestamp}.csv">📥 Download Results CSV</a>'
+                    href = f'<a href="data:file/csv;base64,{b64}" download="classified_emails_{timestamp}.csv" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 10px; text-decoration: none; font-weight: bold;">📥 Download Results CSV</a>'
                     st.markdown(href, unsafe_allow_html=True)
                     
-                    # Summary statistics
-                    st.markdown("### 📊 Summary")
+                    st.markdown("#### 📈 Summary Statistics")
                     col1, col2, col3, col4, col5 = st.columns(5)
                     with col1:
                         st.metric("Total", len(df))
@@ -436,90 +544,89 @@ with tab2:
                         imp = (df['prediction'].str.contains('Important', na=False)).sum()
                         st.metric("⭐ Important", imp)
                     
-                    # Pie chart
                     fig = px.pie(values=[spam, promo, social, imp],
                                  names=['Spam', 'Promotion', 'Social', 'Important'],
                                  title='Prediction Distribution',
                                  color_discrete_sequence=['#f5576c', '#fda085', '#4facfe', '#43e97b'])
+                    fig.update_layout(
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        font={'color': 'white'},
+                        title_font_color='white'
+                    )
                     st.plotly_chart(fig, use_container_width=True)
 
 # ============================================
-# TAB 3: ANALYTICS (RESTORED)
+# TAB 3: ANALYTICS
 # ============================================
 with tab3:
     st.markdown("### 📊 Model Performance Analytics")
     
-    # Try to load model comparison results
-    try:
-        results_df = pd.read_csv('figures/model_results.csv')
-        st.markdown("#### Model Comparison")
-        st.dataframe(results_df)
-        
-        # Model comparison chart
-        fig = go.Figure()
-        for model_name in results_df.index:
-            fig.add_trace(go.Bar(
-                name=model_name,
-                x=['Accuracy', 'Precision', 'Recall', 'F1 Score'],
-                y=results_df.loc[model_name, ['Accuracy', 'Precision', 'Recall', 'F1 Score']].values
-            ))
-        fig.update_layout(barmode='group', title="Performance Metrics by Model")
-        st.plotly_chart(fig, use_container_width=True)
-    except:
-        st.info("Run training first to see model comparison metrics")
-    
-    # Confusion Matrix
-    st.markdown("#### Confusion Matrix")
-    if os.path.exists('figures/confusion_matrix.png'):
-        st.image('figures/confusion_matrix.png', use_container_width=True)
-    else:
-        st.info("Run training to generate confusion matrix")
-    
-    # ROC Curves
-    st.markdown("#### ROC Curves (One-vs-Rest)")
-    if os.path.exists('figures/roc_curves.png'):
-        st.image('figures/roc_curves.png', use_container_width=True)
-    else:
-        st.info("Run training to generate ROC curves")
-    
-    # Per-Class Performance
-    st.markdown("#### Per-Class Performance")
-    if os.path.exists('figures/per_class_performance.png'):
-        st.image('figures/per_class_performance.png', use_container_width=True)
-    else:
-        st.info("Run training to generate per-class performance chart")
-    
-    # Top Keywords per Category
     st.markdown("#### 🔑 Top Keywords per Category")
     
     if hasattr(model, 'coef_'):
         feature_names = vectorizer.get_feature_names_out()
         
+        keyword_cols = st.columns(2)
         for i, category in enumerate(label_encoder.classes_):
-            coef = model.coef_[i]
-            top_idx = np.argsort(coef)[-10:][::-1]
-            top_words = [feature_names[idx] for idx in top_idx]
-            
-            with st.expander(f"📌 {category}"):
-                st.write(f"**Top indicators:** {', '.join(top_words)}")
+            with keyword_cols[i % 2]:
+                coef = model.coef_[i]
+                top_idx = np.argsort(coef)[-10:][::-1]
+                top_words = [feature_names[idx] for idx in top_idx]
+                st.markdown(f"""
+                <div style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                    <h4 style="margin: 0 0 0.5rem 0;">📌 {category}</h4>
+                    <p style="margin: 0; font-size: 0.9rem;">{', '.join(top_words)}</p>
+                </div>
+                """, unsafe_allow_html=True)
     else:
         st.info("Feature importance not available for this model type")
     
+    st.markdown("#### 📊 Confusion Matrix")
+    if os.path.exists('figures/confusion_matrix.png'):
+        st.image('figures/confusion_matrix.png', use_container_width=True)
+    else:
+        st.info("Run training to generate confusion matrix")
+    
+    st.markdown("#### 📈 ROC Curves (One-vs-Rest)")
+    if os.path.exists('figures/roc_curves.png'):
+        st.image('figures/roc_curves.png', use_container_width=True)
+    else:
+        st.info("Run training to generate ROC curves")
+    
+    st.markdown("#### 🎯 Per-Class Performance")
+    if os.path.exists('figures/per_class_performance.png'):
+        st.image('figures/per_class_performance.png', use_container_width=True)
+    else:
+        st.info("Run training to generate per-class performance chart")
+    
     st.markdown("---")
-    st.markdown("### 💡 Tips for Better Classification")
-    st.info("""
-    - Use complete emails (50+ words) for better accuracy
-    - Very short emails (<10 chars) will return UNCERTAIN
-    - Adjust confidence threshold based on your needs
-    - Lower threshold = more predictions (less accurate)
-    - Higher threshold = fewer predictions (more reliable)
-    """)
+    st.markdown("#### 💡 Tips for Better Results")
+    
+    col_tip1, col_tip2 = st.columns(2)
+    with col_tip1:
+        st.markdown("""
+        <div style="background: rgba(67,233,123,0.1); border-left: 4px solid #43e97b; padding: 1rem; border-radius: 10px;">
+            <strong>✅ DO's</strong><br>
+            • Use complete emails (50+ words)<br>
+            • Include clear context and details<br>
+            • Use proper grammar and spelling
+        </div>
+        """, unsafe_allow_html=True)
+    with col_tip2:
+        st.markdown("""
+        <div style="background: rgba(245,87,108,0.1); border-left: 4px solid #f5576c; padding: 1rem; border-radius: 10px;">
+            <strong>❌ DON'Ts</strong><br>
+            • Very short emails (&lt;10 chars) → UNCERTAIN<br>
+            • All caps or excessive punctuation<br>
+            • Check confidence threshold settings
+        </div>
+        """, unsafe_allow_html=True)
 
 # ============================================
 # FOOTER
 # ============================================
-st.markdown("---")
-st.markdown(
-    "<p style='text-align: center; color: gray; font-size: 0.8rem;'>Email Classification System | Powered by Logistic Regression</p>",
-    unsafe_allow_html=True
-)
+st.markdown("""
+<div class="footer">
+    <p>Email Classification System | Powered by Logistic Regression | Built with Streamlit</p>
+</div>
+""", unsafe_allow_html=True)
