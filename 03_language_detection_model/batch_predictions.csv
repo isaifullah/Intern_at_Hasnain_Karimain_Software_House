@@ -1,0 +1,7 @@
+text,predicted_language,confidence,top_2
+The quick brown fox jumps over the lazy dog,English,51.29%,English → Pushto
+آج کا دن بہت خوبصورت ہے,Urdu,57.41%,Urdu → Pushto
+Me encanta aprender nuevos idiomas,Spanish,16.28%,Spanish → Portugese
+J'apprends le français chaque jour,French,28.00%,French → Portugese
+Ich lerne Deutsch mit Spaß,French,13.64%,French → Latin
+أتعلم اللغة العربية كل يوم,Arabic,91.10%,Arabic → Urdu
