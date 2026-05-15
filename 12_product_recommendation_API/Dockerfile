@@ -1,17 +1,13 @@
-# Base Image
-FROM python:3.11
+FROM python:3.10
 
-# Set Working Directory
 WORKDIR /app
 
-# Copy Files
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
 
-# Install Dependencies
-RUN pip install -r requirements.txt
+EXPOSE 7860
 
-# Expose Port
-EXPOSE 8000
-
-# Run FastAPI
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
