@@ -1,0 +1,29 @@
+===========================================================
+PRODUCT RECOMMENDATION API - SUBMISSION LINKS
+===========================================================
+
+SOURCE CODE:
+https://huggingface.co/spaces/isaifullah/12_product_recommendation_API
+→ Shows: Hugging Face Space with all project files
+
+LIVE API:
+https://isaifullah-12-product-recommendation-api.hf.space/
+→ Shows: {"message": "Product Recommendation API is Running"}
+
+API DOCUMENTATION (Swagger UI):
+https://isaifullah-12-product-recommendation-api.hf.space/docs
+→ Shows: Interactive API docs with all endpoints
+
+ALL PRODUCTS:
+https://isaifullah-12-product-recommendation-api.hf.space/products
+→ Shows: JSON list of all 25 products
+
+SEARCH EXAMPLE:
+https://isaifullah-12-product-recommendation-api.hf.space/search?query=gaming
+→ Shows: Products matching "gaming"
+
+RECOMMEND EXAMPLE:
+https://isaifullah-12-product-recommendation-api.hf.space/recommend/iPhone%2014%20Pro%20Max
+→ Shows: Similar products to iPhone 14 Pro Max
+
+===========================================================
