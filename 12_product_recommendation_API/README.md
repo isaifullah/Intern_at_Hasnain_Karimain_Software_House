@@ -32,16 +32,16 @@ This project simulates real-world recommendation engines used in e-commerce plat
 
 # 📁 Project Structure
 
-product_recommendation_api/
-├── app/
-│   ├── main.py              # FastAPI backend
-│   ├── recommender.py       # Recommendation logic
-│   ├── data/
-│   │   └── products.csv     # Dataset
-│
-├── requirements.txt
-├── Dockerfile
-├── README.md
+product_recommendation_api/<br>
+├── app/<br>
+│   ├── main.py              # FastAPI backend<br>
+│   ├── recommender.py       # Recommendation logic<br>
+│   ├── data/<br>
+│   │   └── products.csv     # Dataset<br>
+│<br>
+├── requirements.txt<br>
+├── Dockerfile<br>
+├── README.md<br>
 
 ---
 
