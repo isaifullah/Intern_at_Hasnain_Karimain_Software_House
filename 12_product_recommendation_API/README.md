@@ -1,3 +1,13 @@
+
+---
+title: Product Recommendation API
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # 🎯 Product Recommendation API (FastAPI + Machine Learning)
 
 An AI-powered Product Recommendation System built using FastAPI, TF-IDF Vectorization, and Cosine Similarity.  
