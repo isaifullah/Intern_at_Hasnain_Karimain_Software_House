@@ -2,7 +2,6 @@
 # PRODUCT RECOMMENDATION LOGIC
 # ============================================================
 
-# Import Libraries
 import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -17,13 +16,11 @@ df = pd.read_csv("app/data/products.csv")
 
 
 # ============================================================
-# DATA PREPROCESSING
+# PREPROCESSING
 # ============================================================
 
-# Fill missing values
 df = df.fillna("")
 
-# Combine important text columns
 df["tags"] = (
     df["name"] + " " +
     df["main_category"] + " " +
@@ -32,7 +29,7 @@ df["tags"] = (
 
 
 # ============================================================
-# TF-IDF VECTORIZATION
+# TF-IDF
 # ============================================================
 
 tfidf = TfidfVectorizer(stop_words="english")
@@ -41,7 +38,7 @@ tfidf_matrix = tfidf.fit_transform(df["tags"])
 
 
 # ============================================================
-# COSINE SIMILARITY
+# SIMILARITY MATRIX
 # ============================================================
 
 similarity_matrix = cosine_similarity(tfidf_matrix)
@@ -53,7 +50,9 @@ similarity_matrix = cosine_similarity(tfidf_matrix)
 
 def get_all_products():
 
-    return df[["name", "main_category"]].head(50).to_dict(orient="records")
+    return df[
+        ["name", "main_category"]
+    ].head(50).to_dict(orient="records")
 
 
 # ============================================================
@@ -66,7 +65,9 @@ def search_products(query):
         df["name"].str.contains(query, case=False)
     ]
 
-    return results[["name", "main_category"]].head(10).to_dict(orient="records")
+    return results[
+        ["name", "main_category"]
+    ].head(10).to_dict(orient="records")
 
 
 # ============================================================
