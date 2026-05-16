@@ -407,9 +407,8 @@ Potential future upgrades include:
 
 # 👨‍💻 Author
 
-## Khalid Saifullah
-
-Bachelor of Science in Artificial Intelligence
+Saif Ullah  
+AI/ML Engineer
 
 ### Interests
 
