@@ -7,6 +7,3 @@ sentencepiece
 scikit-learn
 nltk
 requests
-speechrecognition
-pyttsx3
-pyaudio
