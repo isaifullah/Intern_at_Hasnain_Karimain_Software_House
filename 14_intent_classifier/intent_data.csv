@@ -1,0 +1,1201 @@
+text,intent
+can you track my package for me,order_status
+perfect thank you!,thanks
+could you delivery status please,order_status
+track my package please,order_status
+could you product damaged please,complaint
+please hi using chatbot,greeting
+buy headphones,product_search
+please delivery status,order_status
+I need to where is my order today,order_status
+weather today for me,weather_query
+could you doctor appointment today,appointment_booking
+I need to track my package,order_status
+are you there!,greeting
+could you schedule meeting now,appointment_booking
+I need to complain today,complaint
+thank you so much,thanks
+where is my order now,order_status
+catch you later please,goodbye
+can you service is bad please,complaint
+I have to go.,goodbye
+can you book appointment for me,appointment_booking
+hey!,greeting
+can you service is bad for me,complaint
+can you raining outside now,weather_query
+can you hot today,weather_query
+are you an AI assistant?,name_query
+I need to cannot login,account_help
+I need to show laptops,product_search
+doctor appointment for me,appointment_booking
+are you there.,greeting
+could you show laptops,product_search
+how are you.,greeting
+could you track my package now,order_status
+could you account help today,account_help
+goodbye.,goodbye
+thanks for information.,thanks
+please doctor appointment today,appointment_booking
+could you delivery status for me,order_status
+can you order a burger for me,food_order
+thanks a lot.,thanks
+please tell me your name,name_query
+please reset password now,account_help
+what can I call you please,name_query
+please book appointment today,appointment_booking
+hot today please,weather_query
+show laptops please,product_search
+thanks for support.,thanks
+can you find mobile phones,product_search
+could you track my package today,order_status
+perfect thank you please,thanks
+could you schedule meeting for me,appointment_booking
+could you reset password please,account_help
+I need to cannot login now,account_help
+can you I am ordering food please,food_order
+please order shipped today,order_status
+order pizza,food_order
+could you complain,complaint
+take care!,goodbye
+nice to meet you.,greeting
+I need to product damaged today,complaint
+cannot login today,account_help
+please product damaged today,complaint
+I need to schedule meeting for me,appointment_booking
+refund my payment for me,payment_issue
+can you search smart watches for me,product_search
+please hi with support,greeting
+please doctor appointment for me,appointment_booking
+good afternoon!,greeting
+hey.,greeting
+please raining outside now,weather_query
+find mobile phones now,product_search
+please not satisfied now,complaint
+please hi,greeting
+I need to refund my payment please,payment_issue
+book appointment now,appointment_booking
+can you order pizza now,food_order
+get biryani please,food_order
+I need to search smart watches please,product_search
+what are you called please,name_query
+please schedule meeting please,appointment_booking
+please delivery status today,order_status
+end chat.,goodbye
+can you payment not going through please,payment_issue
+can you payment not going through today,payment_issue
+could you forgot my password now,account_help
+get biryani now,food_order
+who are you?,name_query
+please perfect thank you,thanks
+not satisfied please,complaint
+you are helpful.,thanks
+I need to rain tomorrow please,weather_query
+can you order shipped today,order_status
+please that helped me,thanks
+forgot my password for me,account_help
+I need to get biryani today,food_order
+please thanks bye,goodbye
+service is bad for me,complaint
+show laptops now,product_search
+service is bad please,complaint
+reserve table today,appointment_booking
+thanks dear please,thanks
+track my package now,order_status
+I need to raining outside for me,weather_query
+where is my order for me,order_status
+could you find mobile phones please,product_search
+please how are you,greeting
+cannot login for me,account_help
+can you buy headphones please,product_search
+I need to charged twice now,payment_issue
+I need to payment failed now,payment_issue
+can you reset password now,account_help
+please what can I call you,name_query
+can you cannot login now,account_help
+please cannot login today,account_help
+thanks please,thanks
+I need to get biryani for me,food_order
+good morning.,greeting
+please charged twice for me,payment_issue
+I need to reset password now,account_help
+quick reply thanks!,thanks
+please I am ordering food please,food_order
+talk to you later.,goodbye
+can you service is bad today,complaint
+please hey buddy,greeting
+grateful!,thanks
+I need to not satisfied today,complaint
+can you get biryani please,food_order
+could you show laptops please,product_search
+who am I talking to please,name_query
+I need to delivery status,order_status
+please get biryani now,food_order
+can you reserve table,appointment_booking
+please reserve table for me,appointment_booking
+okay thanks!,thanks
+bye for now,goodbye
+could you complain now,complaint
+please hot today today,weather_query
+where is my order please,order_status
+can you weather today for me,weather_query
+good afternoon.,greeting
+thank you!,thanks
+I need to order a burger please,food_order
+can you tell me about yourself,name_query
+thanks,thanks
+find mobile phones please,product_search
+please reserve table,appointment_booking
+product damaged please,complaint
+I need to raining outside today,weather_query
+hot today for me,weather_query
+appreciate your help,thanks
+could you rain tomorrow for me,weather_query
+could you product damaged for me,complaint
+please forgot my password,account_help
+I need to payment failed for me,payment_issue
+can you doctor appointment today,appointment_booking
+can you refund my payment,payment_issue
+I need to weather today,weather_query
+please bye for now,goodbye
+I need to account help now,account_help
+can you delivery status now,order_status
+please cannot login,account_help
+I want to hi immediately,greeting
+delivery status for me,order_status
+hey buddy please,greeting
+forgot my password now,account_help
+cannot login please,account_help
+could you find mobile phones for me,product_search
+could you hot today,weather_query
+could you cannot login today,account_help
+payment failed now,payment_issue
+please hot today,weather_query
+could you book appointment please,appointment_booking
+please nice thanks,thanks
+could you not satisfied please,complaint
+please search smart watches for me,product_search
+good evening.,greeting
+please charged twice please,payment_issue
+could you product damaged now,complaint
+can you payment not going through now,payment_issue
+state your name please,name_query
+payment failed today,payment_issue
+can you product damaged,complaint
+please order a burger please,food_order
+what do people call you,name_query
+I need to not satisfied,complaint
+please hi online,greeting
+could you product damaged today,complaint
+please buy headphones for me,product_search
+okay bye!,goodbye
+much appreciated,thanks
+please refund my payment now,payment_issue
+please bye,goodbye
+I want to hi with support,greeting
+could you payment failed,payment_issue
+I need to order pizza,food_order
+okay thanks,thanks
+forgot my password today,account_help
+can you who are you,name_query
+could you I am ordering food for me,food_order
+hey buddy!,greeting
+could you account help for me,account_help
+can you reserve table today,appointment_booking
+could you charged twice for me,payment_issue
+I need to find mobile phones now,product_search
+schedule meeting today,appointment_booking
+could you not satisfied now,complaint
+please goodbye in the app,goodbye
+what kind of bot are you,name_query
+can you search smart watches,product_search
+that is useful please,thanks
+are you there please,greeting
+can you order pizza,food_order
+please cannot login now,account_help
+I want to goodbye in the app,goodbye
+please find mobile phones,product_search
+can you introduce yourself,name_query
+can you charged twice please,payment_issue
+can you order pizza for me,food_order
+please where is my order please,order_status
+tell me your name please,name_query
+what kind of bot are you please,name_query
+could you weather today for me,weather_query
+I need to weather today now,weather_query
+can you doctor appointment for me,appointment_booking
+can you payment not going through,payment_issue
+I need to doctor appointment for me,appointment_booking
+thanks dear.,thanks
+hey,greeting
+farewell please,goodbye
+please show laptops for me,product_search
+could you order a burger please,food_order
+good night!,goodbye
+please rain tomorrow,weather_query
+please hot today please,weather_query
+quick reply thanks please,thanks
+bye please,goodbye
+can you bye from my account,goodbye
+please thank you,thanks
+can you rain tomorrow please,weather_query
+doctor appointment,appointment_booking
+please thanks a lot,thanks
+see you later.,goodbye
+nice to meet you please,greeting
+please thanks for support,thanks
+I need to reset password,account_help
+could you show laptops today,product_search
+please are you an AI assistant,name_query
+can you get biryani now,food_order
+please forgot my password please,account_help
+order pizza now,food_order
+product damaged for me,complaint
+please buy headphones please,product_search
+good morning please,greeting
+can you I am ordering food today,food_order
+could you forgot my password today,account_help
+can you forgot my password for me,account_help
+weather today,weather_query
+could you payment not going through please,payment_issue
+I need to cannot login please,account_help
+can you buy headphones now,product_search
+could you not satisfied today,complaint
+please get biryani,food_order
+please talk to you later,goodbye
+can you product damaged please,complaint
+okay thanks.,thanks
+order shipped for me,order_status
+catch you later.,goodbye
+rain tomorrow now,weather_query
+good morning!,greeting
+I need to schedule meeting please,appointment_booking
+please not satisfied,complaint
+please reserve table please,appointment_booking
+thanks for solving it please,thanks
+complain please,complaint
+please reset password today,account_help
+buy headphones now,product_search
+what can I call you,name_query
+grateful please,thanks
+I want to hi from my account,greeting
+thanks dear,thanks
+you are helpful please,thanks
+search smart watches please,product_search
+that helped me.,thanks
+hi chatbot,greeting
+how are you,greeting
+I need to rain tomorrow,weather_query
+please order shipped,order_status
+could you reserve table please,appointment_booking
+order a burger please,food_order
+service is bad,complaint
+can you order shipped please,order_status
+I need to buy headphones for me,product_search
+talk to you later,goodbye
+can you order pizza today,food_order
+please service is bad please,complaint
+could you find mobile phones now,product_search
+can you account help today,account_help
+charged twice for me,payment_issue
+I have to go,goodbye
+can you schedule meeting now,appointment_booking
+can you hi in the app,greeting
+could you product damaged,complaint
+introduce yourself,name_query
+I need to get biryani,food_order
+what's up.,greeting
+reserve table please,appointment_booking
+please order pizza,food_order
+how are you please,greeting
+please product damaged for me,complaint
+can you payment failed now,payment_issue
+can you payment failed please,payment_issue
+assalam o alaikum!,greeting
+please delivery status now,order_status
+I need to hot today now,weather_query
+can you product damaged now,complaint
+I need to order a burger,food_order
+please complain please,complaint
+I need to book appointment today,appointment_booking
+could you cannot login please,account_help
+much appreciated!,thanks
+I need to order shipped,order_status
+hot today now,weather_query
+raining outside today,weather_query
+please catch you later,goodbye
+can you rain tomorrow today,weather_query
+can you forgot my password now,account_help
+can you reserve table please,appointment_booking
+exit chat,goodbye
+reserve table,appointment_booking
+can you your name please,name_query
+hello.,greeting
+could you forgot my password,account_help
+can you hi immediately,greeting
+please bye online,goodbye
+talk to you later!,goodbye
+reset password now,account_help
+book appointment please,appointment_booking
+can you charged twice now,payment_issue
+please exit chat,goodbye
+thank you assistant.,thanks
+thank you,thanks
+weather today please,weather_query
+please reset password please,account_help
+I need to buy headphones please,product_search
+I need to service is bad for me,complaint
+complain,complaint
+can you tell me your name,name_query
+I need to I am ordering food for me,food_order
+please search smart watches today,product_search
+much appreciated.,thanks
+I want to hello from my account,greeting
+can you order shipped now,order_status
+please complain today,complaint
+good night please,goodbye
+can you hot today please,weather_query
+who am I talking to?,name_query
+please order a burger now,food_order
+I need to forgot my password now,account_help
+what should I call you please,name_query
+could you complain for me,complaint
+I need to doctor appointment now,appointment_booking
+can you bye in the app,goodbye
+not satisfied,complaint
+can you show laptops please,product_search
+can you payment failed,payment_issue
+thanks a lot please,thanks
+I need to get biryani now,food_order
+I need to complain for me,complaint
+can you payment failed today,payment_issue
+track my package today,order_status
+rain tomorrow for me,weather_query
+please order pizza now,food_order
+see you later please,goodbye
+could you reset password now,account_help
+could you reset password,account_help
+thanks for support please,thanks
+show laptops for me,product_search
+I am ordering food please,food_order
+can you rain tomorrow for me,weather_query
+could you doctor appointment please,appointment_booking
+I need to book appointment please,appointment_booking
+I need to order shipped for me,order_status
+can you hot today now,weather_query
+what are you called?,name_query
+can you complain for me,complaint
+appreciate your help please,thanks
+could you rain tomorrow today,weather_query
+take care please,goodbye
+please schedule meeting today,appointment_booking
+can you hello from my account,greeting
+can you I am ordering food for me,food_order
+perfect thank you.,thanks
+charged twice today,payment_issue
+can you book appointment please,appointment_booking
+please service is bad,complaint
+can you refund my payment now,payment_issue
+search smart watches,product_search
+please what is your name,name_query
+see you soon.,goodbye
+can you not satisfied now,complaint
+goodbye please,goodbye
+reset password today,account_help
+please what is your identity,name_query
+can you not satisfied today,complaint
+please forgot my password now,account_help
+please schedule meeting,appointment_booking
+okay bye.,goodbye
+please complain,complaint
+please payment failed for me,payment_issue
+please who are you,name_query
+much appreciated please,thanks
+can you order a burger now,food_order
+please hot today for me,weather_query
+can you doctor appointment,appointment_booking
+what is your identity,name_query
+tell me about yourself,name_query
+please hello there,greeting
+good night,goodbye
+I need to product damaged for me,complaint
+that helped me!,thanks
+could you search smart watches for me,product_search
+I need to rain tomorrow for me,weather_query
+can you not satisfied please,complaint
+I need to order pizza today,food_order
+payment failed for me,payment_issue
+can you schedule meeting today,appointment_booking
+I need to hot today please,weather_query
+get biryani,food_order
+please grateful,thanks
+can you who am I talking to,name_query
+could you charged twice,payment_issue
+your name please please,name_query
+I need to complain please,complaint
+hot today,weather_query
+please hi immediately,greeting
+I need to show laptops please,product_search
+please hi from my account,greeting
+can you what kind of bot are you,name_query
+can you order a burger,food_order
+payment not going through now,payment_issue
+raining outside,weather_query
+can you bye online,goodbye
+I need to order pizza please,food_order
+can you what is your identity,name_query
+can you reset password for me,account_help
+please not satisfied please,complaint
+could you cannot login,account_help
+please track my package for me,order_status
+I need to product damaged please,complaint
+please okay bye,goodbye
+please raining outside please,weather_query
+please I am ordering food for me,food_order
+what's up,greeting
+who created you?,name_query
+payment not going through,payment_issue
+payment not going through for me,payment_issue
+I need to I am ordering food now,food_order
+I want to bye in the app,goodbye
+good evening!,greeting
+where is my order,order_status
+can you get biryani for me,food_order
+could you doctor appointment for me,appointment_booking
+can you are you an AI assistant,name_query
+please account help please,account_help
+thanks for information,thanks
+can you what are you called,name_query
+I need to forgot my password for me,account_help
+grateful.,thanks
+I need to hot today,weather_query
+please rain tomorrow please,weather_query
+thanks a lot!,thanks
+could you forgot my password please,account_help
+could you account help,account_help
+I need to doctor appointment please,appointment_booking
+please find mobile phones please,product_search
+I need to show laptops now,product_search
+what's up please,greeting
+bye!,goodbye
+are you human?,name_query
+could you reset password today,account_help
+I want to bye immediately,goodbye
+can you order shipped for me,order_status
+I need to raining outside please,weather_query
+could you get biryani for me,food_order
+can you delivery status for me,order_status
+can you forgot my password today,account_help
+state your name,name_query
+I need to get biryani please,food_order
+could you search smart watches now,product_search
+great thanks,thanks
+charged twice,payment_issue
+could you where is my order for me,order_status
+please refund my payment for me,payment_issue
+please payment failed today,payment_issue
+could you rain tomorrow now,weather_query
+please hot today now,weather_query
+please doctor appointment please,appointment_booking
+find mobile phones,product_search
+can you weather today,weather_query
+I need to schedule meeting now,appointment_booking
+can you bye with support,goodbye
+please payment not going through please,payment_issue
+can you schedule meeting,appointment_booking
+service is bad today,complaint
+can you order a burger today,food_order
+could you complain please,complaint
+can you delivery status,order_status
+thank you so much please,thanks
+please show laptops,product_search
+could you raining outside now,weather_query
+could you schedule meeting please,appointment_booking
+please good night,goodbye
+I need to payment not going through,payment_issue
+please payment not going through,payment_issue
+could you search smart watches please,product_search
+could you service is bad for me,complaint
+I need to payment not going through for me,payment_issue
+how are you!,greeting
+hello there!,greeting
+you are helpful!,thanks
+can you doctor appointment please,appointment_booking
+could you service is bad now,complaint
+hi chatbot please,greeting
+please good morning,greeting
+could you search smart watches today,product_search
+nice thanks!,thanks
+please I am ordering food today,food_order
+please track my package please,order_status
+please get biryani for me,food_order
+that is useful!,thanks
+I need to raining outside,weather_query
+please account help for me,account_help
+please find mobile phones for me,product_search
+could you order pizza please,food_order
+can you raining outside,weather_query
+can you service is bad now,complaint
+could you I am ordering food please,food_order
+thank you so much.,thanks
+can you are you human,name_query
+I need to order shipped now,order_status
+schedule meeting please,appointment_booking
+can you track my package today,order_status
+can you hi online,greeting
+I need to charged twice,payment_issue
+where is my order today,order_status
+assalam o alaikum.,greeting
+account help today,account_help
+doctor appointment today,appointment_booking
+please end chat,goodbye
+can you where is my order for me,order_status
+could you raining outside for me,weather_query
+could you refund my payment today,payment_issue
+please assalam o alaikum,greeting
+buy headphones for me,product_search
+complain now,complaint
+get biryani for me,food_order
+I need to forgot my password today,account_help
+I need to delivery status for me,order_status
+order a burger,food_order
+I need to account help for me,account_help
+could you buy headphones today,product_search
+can you find mobile phones today,product_search
+please weather today,weather_query
+can you rain tomorrow,weather_query
+reserve table now,appointment_booking
+can you show laptops,product_search
+can you hot today for me,weather_query
+good evening,greeting
+I need to hot today today,weather_query
+I need to book appointment for me,appointment_booking
+can you order pizza please,food_order
+salam please,greeting
+track my package,order_status
+delivery status now,order_status
+could you show laptops now,product_search
+what is your identity please,name_query
+could you where is my order now,order_status
+please thanks,thanks
+please are you a chatbot,name_query
+could you book appointment now,appointment_booking
+I have to go!,goodbye
+could you hot today now,weather_query
+can you order a burger please,food_order
+please farewell,goodbye
+doctor appointment now,appointment_booking
+can you book appointment now,appointment_booking
+can you reserve table for me,appointment_booking
+could you reserve table for me,appointment_booking
+cannot login,account_help
+please thank you so much,thanks
+are you a chatbot?,name_query
+please find mobile phones today,product_search
+can you hi from my account,greeting
+order shipped,order_status
+please get biryani please,food_order
+please thanks for information,thanks
+I need to delivery status please,order_status
+please charged twice today,payment_issue
+thanks.,thanks
+I am ordering food today,food_order
+could you I am ordering food,food_order
+can you schedule meeting please,appointment_booking
+could you schedule meeting,appointment_booking
+bye for now.,goodbye
+please order shipped please,order_status
+perfect thank you,thanks
+can you track my package please,order_status
+could you payment failed please,payment_issue
+could you buy headphones please,product_search
+I need to weather today for me,weather_query
+please quick reply thanks,thanks
+I need to refund my payment now,payment_issue
+please show laptops now,product_search
+can you complain,complaint
+thanks bye!,goodbye
+could you order shipped now,order_status
+please take care,goodbye
+I need to not satisfied now,complaint
+I need to refund my payment,payment_issue
+can you show laptops now,product_search
+delivery status,order_status
+please charged twice,payment_issue
+I want to bye from my account,goodbye
+I need to reserve table please,appointment_booking
+what should I call you,name_query
+great thanks please,thanks
+hello,greeting
+please product damaged now,complaint
+I need to order a burger for me,food_order
+please your name please,name_query
+please payment failed please,payment_issue
+tell me about yourself?,name_query
+please goodbye using chatbot,goodbye
+can you payment not going through for me,payment_issue
+I need to where is my order for me,order_status
+can you assistant name,name_query
+please what are you called,name_query
+reset password,account_help
+can you delivery status please,order_status
+you are helpful,thanks
+hey buddy.,greeting
+could you buy headphones,product_search
+farewell,goodbye
+order pizza today,food_order
+please order a burger,food_order
+could you weather today now,weather_query
+could you buy headphones for me,product_search
+please buy headphones,product_search
+could you raining outside today,weather_query
+nice thanks.,thanks
+I need to reset password today,account_help
+charged twice now,payment_issue
+could you get biryani,food_order
+I want to hi online,greeting
+okay bye please,goodbye
+please book appointment please,appointment_booking
+please complain for me,complaint
+can you book appointment today,appointment_booking
+please cannot login for me,account_help
+I need to product damaged now,complaint
+assistant name,name_query
+raining outside for me,weather_query
+I need to forgot my password please,account_help
+please state your name,name_query
+could you reserve table,appointment_booking
+I need to not satisfied for me,complaint
+could you get biryani today,food_order
+can you weather today please,weather_query
+hi,greeting
+can you refund my payment please,payment_issue
+could you where is my order,order_status
+please weather today today,weather_query
+please payment not going through now,payment_issue
+please reset password,account_help
+give your introduction?,name_query
+are you human please,name_query
+please track my package,order_status
+search smart watches for me,product_search
+please product damaged,complaint
+thanks for support,thanks
+weather today now,weather_query
+can you search smart watches please,product_search
+tell me about yourself please,name_query
+could you where is my order today,order_status
+buy headphones today,product_search
+could you weather today please,weather_query
+could you payment failed for me,payment_issue
+thank you assistant please,thanks
+good night.,goodbye
+that helped me please,thanks
+can you complain now,complaint
+what is your name,name_query
+I need to schedule meeting today,appointment_booking
+please account help,account_help
+please service is bad now,complaint
+I need to search smart watches for me,product_search
+I need to rain tomorrow now,weather_query
+order pizza please,food_order
+can you account help please,account_help
+refund my payment please,payment_issue
+please charged twice now,payment_issue
+could you doctor appointment,appointment_booking
+can you complain please,complaint
+thanks!,thanks
+can you I am ordering food,food_order
+I need to show laptops today,product_search
+I need to reserve table for me,appointment_booking
+could you hot today for me,weather_query
+I need to product damaged,complaint
+I need to payment failed today,payment_issue
+I need to forgot my password,account_help
+I need to track my package please,order_status
+thanks for solving it,thanks
+rain tomorrow today,weather_query
+could you track my package for me,order_status
+can you forgot my password,account_help
+please search smart watches please,product_search
+who am I talking to,name_query
+please you are helpful,thanks
+could you payment not going through for me,payment_issue
+can you bye using chatbot,goodbye
+please thanks for solving it,thanks
+please great thanks,thanks
+assalam o alaikum please,greeting
+can you raining outside for me,weather_query
+search smart watches now,product_search
+I need to account help,account_help
+please where is my order for me,order_status
+I need to payment failed please,payment_issue
+please cannot login please,account_help
+please rain tomorrow for me,weather_query
+can you buy headphones today,product_search
+nice to meet you!,greeting
+I need to buy headphones now,product_search
+can you raining outside please,weather_query
+please where is my order today,order_status
+can you goodbye from my account,goodbye
+account help,account_help
+please good evening,greeting
+please reserve table now,appointment_booking
+please order a burger today,food_order
+can you weather today now,weather_query
+please rain tomorrow today,weather_query
+please schedule meeting now,appointment_booking
+order pizza for me,food_order
+order a burger now,food_order
+please delivery status please,order_status
+can you doctor appointment now,appointment_booking
+could you hot today please,weather_query
+see you later,goodbye
+could you complain today,complaint
+assistant name?,name_query
+I need to I am ordering food today,food_order
+please search smart watches,product_search
+not satisfied now,complaint
+who are you,name_query
+I need to where is my order please,order_status
+could you raining outside,weather_query
+not satisfied for me,complaint
+I want to bye using chatbot,goodbye
+assalam o alaikum,greeting
+I need to where is my order now,order_status
+please bye using chatbot,goodbye
+end chat!,goodbye
+buy headphones please,product_search
+could you find mobile phones today,product_search
+can you reset password,account_help
+I need to find mobile phones for me,product_search
+I need to refund my payment today,payment_issue
+I need to search smart watches today,product_search
+goodbye,goodbye
+please account help now,account_help
+I need to buy headphones,product_search
+I need to account help today,account_help
+are you a chatbot,name_query
+could you rain tomorrow please,weather_query
+nice thanks please,thanks
+I need to rain tomorrow today,weather_query
+could you weather today,weather_query
+hello there.,greeting
+could you reserve table now,appointment_booking
+who created you please,name_query
+farewell!,goodbye
+could you refund my payment,payment_issue
+I need to payment not going through please,payment_issue
+please much appreciated,thanks
+what's up!,greeting
+please refund my payment today,payment_issue
+farewell.,goodbye
+please complain now,complaint
+could you buy headphones now,product_search
+are you a chatbot please,name_query
+okay thanks please,thanks
+I need to refund my payment for me,payment_issue
+can you track my package now,order_status
+I need to complain now,complaint
+can you refund my payment for me,payment_issue
+order shipped now,order_status
+please not satisfied for me,complaint
+end chat,goodbye
+could you I am ordering food today,food_order
+cannot login now,account_help
+see you soon please,goodbye
+can you product damaged for me,complaint
+could you raining outside please,weather_query
+hi please,greeting
+hey buddy,greeting
+what is your name?,name_query
+please find mobile phones now,product_search
+appreciate your help!,thanks
+can you hello in the app,greeting
+hi chatbot.,greeting
+doctor appointment please,appointment_booking
+payment failed,payment_issue
+could you payment failed now,payment_issue
+that helped me,thanks
+I need to reset password for me,account_help
+complain today,complaint
+please order pizza today,food_order
+rain tomorrow please,weather_query
+please service is bad for me,complaint
+could you order pizza,food_order
+could you forgot my password for me,account_help
+can you get biryani today,food_order
+get biryani today,food_order
+please I have to go,goodbye
+could you refund my payment please,payment_issue
+can you not satisfied,complaint
+please goodbye,goodbye
+please doctor appointment now,appointment_booking
+I need to I am ordering food,food_order
+thanks bye.,goodbye
+goodbye!,goodbye
+account help for me,account_help
+please weather today please,weather_query
+could you refund my payment now,payment_issue
+thanks for support!,thanks
+please account help today,account_help
+hello please,greeting
+what can I call you?,name_query
+could you search smart watches,product_search
+please book appointment,appointment_booking
+reset password please,account_help
+please weather today for me,weather_query
+I need to complain,complaint
+please refund my payment please,payment_issue
+I need to track my package today,order_status
+please show laptops please,product_search
+could you get biryani please,food_order
+hot today today,weather_query
+I am ordering food,food_order
+show laptops,product_search
+please rain tomorrow now,weather_query
+could you book appointment,appointment_booking
+please show laptops today,product_search
+could you payment failed today,payment_issue
+introduce yourself please,name_query
+refund my payment,payment_issue
+please hi in the app,greeting
+bye.,goodbye
+payment not going through please,payment_issue
+can you reset password please,account_help
+can you are you a chatbot,name_query
+please hello,greeting
+please nice to meet you,greeting
+could you not satisfied for me,complaint
+that is useful,thanks
+schedule meeting now,appointment_booking
+please weather today now,weather_query
+can you cannot login,account_help
+can you account help now,account_help
+please see you soon,goodbye
+please where is my order,order_status
+can you find mobile phones now,product_search
+could you order a burger for me,food_order
+can you show laptops for me,product_search
+please service is bad today,complaint
+could you book appointment for me,appointment_booking
+please who created you,name_query
+could you I am ordering food now,food_order
+reserve table for me,appointment_booking
+can you charged twice,payment_issue
+payment not going through today,payment_issue
+I need to payment not going through now,payment_issue
+I need to cannot login today,account_help
+your name please?,name_query
+I want to hi using chatbot,greeting
+please reset password for me,account_help
+hello there,greeting
+please forgot my password today,account_help
+please assistant name,name_query
+I am ordering food now,food_order
+please payment not going through today,payment_issue
+take care.,goodbye
+can you where is my order today,order_status
+could you order a burger,food_order
+can you buy headphones for me,product_search
+could you account help please,account_help
+please are you there,greeting
+please forgot my password for me,account_help
+nice to meet you,greeting
+please bye immediately,goodbye
+thanks for information!,thanks
+can you hi using chatbot,greeting
+I need to payment failed,payment_issue
+can you show laptops today,product_search
+please doctor appointment,appointment_booking
+could you charged twice today,payment_issue
+thanks for information please,thanks
+can you reserve table now,appointment_booking
+can you delivery status today,order_status
+I need to payment not going through today,payment_issue
+can you buy headphones,product_search
+good afternoon please,greeting
+I need to weather today please,weather_query
+could you doctor appointment now,appointment_booking
+can you search smart watches now,product_search
+please refund my payment,payment_issue
+not satisfied today,complaint
+could you payment not going through today,payment_issue
+please good afternoon,greeting
+I need to order pizza now,food_order
+weather today today,weather_query
+search smart watches today,product_search
+I have to go please,goodbye
+I need to delivery status today,order_status
+can you what can I call you,name_query
+account help now,account_help
+please who am I talking to,name_query
+can you find mobile phones please,product_search
+I need to service is bad today,complaint
+can you complain today,complaint
+I need to search smart watches now,product_search
+tell me your name?,name_query
+could you order shipped,order_status
+please book appointment now,appointment_booking
+thank you.,thanks
+I need to I am ordering food please,food_order
+I need to hot today for me,weather_query
+hi.,greeting
+can you hot today today,weather_query
+end chat please,goodbye
+salam,greeting
+I need to doctor appointment,appointment_booking
+can you where is my order,order_status
+nice thanks,thanks
+could you order pizza today,food_order
+could you delivery status now,order_status
+could you book appointment today,appointment_booking
+book appointment for me,appointment_booking
+okay bye,goodbye
+could you order a burger now,food_order
+please thank you assistant,thanks
+I need to not satisfied please,complaint
+I need to find mobile phones today,product_search
+I want to hello in the app,greeting
+good morning,greeting
+thanks dear!,thanks
+refund my payment today,payment_issue
+could you cannot login now,account_help
+can you what do people call you,name_query
+can you search smart watches today,product_search
+please what do people call you,name_query
+thanks for solving it!,thanks
+please search smart watches now,product_search
+great thanks.,thanks
+order shipped today,order_status
+I want to hi in the app,greeting
+I need to find mobile phones,product_search
+quick reply thanks,thanks
+please are you human,name_query
+I need to order shipped today,order_status
+I need to book appointment,appointment_booking
+please bye with support,goodbye
+please what should I call you,name_query
+exit chat please,goodbye
+please order shipped for me,order_status
+I need to charged twice for me,payment_issue
+book appointment today,appointment_booking
+please goodbye from my account,goodbye
+I am ordering food for me,food_order
+see you later!,goodbye
+that is useful.,thanks
+please appreciate your help,thanks
+I need to raining outside now,weather_query
+I need to service is bad,complaint
+can you where is my order now,order_status
+salam.,greeting
+bye,goodbye
+can you cannot login please,account_help
+could you cannot login for me,account_help
+can you who created you,name_query
+good afternoon,greeting
+I need to service is bad please,complaint
+please that is useful,thanks
+delivery status today,order_status
+I need to where is my order,order_status
+I need to schedule meeting,appointment_booking
+can you rain tomorrow now,weather_query
+could you track my package please,order_status
+I need to cannot login for me,account_help
+please hello using chatbot,greeting
+I need to reserve table now,appointment_booking
+can you goodbye in the app,goodbye
+could you where is my order please,order_status
+great thanks!,thanks
+please book appointment for me,appointment_booking
+thank you please,thanks
+I need to order a burger today,food_order
+please delivery status for me,order_status
+could you payment not going through,payment_issue
+please payment not going through for me,payment_issue
+show laptops today,product_search
+please buy headphones now,product_search
+please tell me about yourself,name_query
+can you what should I call you,name_query
+please introduce yourself,name_query
+could you order pizza for me,food_order
+I need to delivery status now,order_status
+can you account help,account_help
+who are you please,name_query
+could you order a burger today,food_order
+charged twice please,payment_issue
+schedule meeting for me,appointment_booking
+account help please,account_help
+please salam,greeting
+thanks bye please,goodbye
+could you order shipped today,order_status
+take care,goodbye
+catch you later,goodbye
+please hey,greeting
+can you state your name,name_query
+I need to order shipped please,order_status
+hello there please,greeting
+could you account help now,account_help
+see you soon!,goodbye
+can you order shipped,order_status
+please payment failed now,payment_issue
+I need to order a burger now,food_order
+I need to show laptops for me,product_search
+quick reply thanks.,thanks
+can you not satisfied for me,complaint
+what is your name please,name_query
+can you reset password today,account_help
+can you where is my order please,order_status
+please track my package today,order_status
+thank you assistant!,thanks
+tell me your name,name_query
+can you raining outside today,weather_query
+I need to buy headphones today,product_search
+can you I am ordering food now,food_order
+please I am ordering food now,food_order
+exit chat!,goodbye
+I need to search smart watches,product_search
+please bye in the app,goodbye
+are you human,name_query
+could you delivery status today,order_status
+talk to you later please,goodbye
+could you delivery status,order_status
+reset password for me,account_help
+could you service is bad today,complaint
+order a burger for me,food_order
+please what's up,greeting
+book appointment,appointment_booking
+can you cannot login today,account_help
+hi!,greeting
+please raining outside,weather_query
+could you not satisfied,complaint
+I need to reserve table,appointment_booking
+what is your identity?,name_query
+I need to doctor appointment today,appointment_booking
+can you forgot my password please,account_help
+could you order pizza now,food_order
+can you schedule meeting for me,appointment_booking
+could you rain tomorrow,weather_query
+schedule meeting,appointment_booking
+can you charged twice for me,payment_issue
+hello!,greeting
+find mobile phones for me,product_search
+I need to weather today today,weather_query
+grateful,thanks
+forgot my password please,account_help
+what do people call you please,name_query
+please what kind of bot are you,name_query
+your name please,name_query
+please order a burger for me,food_order
+good evening please,greeting
+can you payment failed for me,payment_issue
+please reserve table today,appointment_booking
+please buy headphones today,product_search
+please product damaged please,complaint
+can you product damaged today,complaint
+see you soon,goodbye
+give your introduction,name_query
+raining outside now,weather_query
+can you weather today today,weather_query
+I need to order pizza for me,food_order
+please hello from my account,greeting
+I want to bye online,goodbye
+can you book appointment,appointment_booking
+could you schedule meeting today,appointment_booking
+please get biryani today,food_order
+introduce yourself?,name_query
+could you service is bad please,complaint
+appreciate your help.,thanks
+thanks for solving it.,thanks
+can you charged twice today,payment_issue
+can you what is your name,name_query
+please payment failed,payment_issue
+give your introduction please,name_query
+could you charged twice now,payment_issue
+could you get biryani now,food_order
+can you find mobile phones for me,product_search
+thanks a lot,thanks
+I need to book appointment now,appointment_booking
+can you track my package,order_status
+could you reset password for me,account_help
+please track my package now,order_status
+thanks bye,goodbye
+I need to charged twice today,payment_issue
+thank you so much!,thanks
+I need to reset password please,account_help
+are you an AI assistant please,name_query
+could you order shipped for me,order_status
+please see you later,goodbye
+can you cannot login for me,account_help
+I need to track my package for me,order_status
+refund my payment now,payment_issue
+product damaged now,complaint
+I need to find mobile phones please,product_search
+please raining outside for me,weather_query
+what do people call you?,name_query
+could you reserve table today,appointment_booking
+rain tomorrow,weather_query
+catch you later!,goodbye
+I need to charged twice please,payment_issue
+track my package for me,order_status
+service is bad now,complaint
+please not satisfied today,complaint
+please raining outside today,weather_query
+I need to service is bad now,complaint
+find mobile phones today,product_search
+what kind of bot are you?,name_query
+who created you,name_query
+please order pizza please,food_order
+are you an AI assistant,name_query
+bye for now please,goodbye
+could you payment not going through now,payment_issue
+could you order shipped please,order_status
+please hello in the app,greeting
+exit chat.,goodbye
+could you hot today today,weather_query
+could you service is bad,complaint
+forgot my password,account_help
+what are you called,name_query
+bye for now!,goodbye
+product damaged,complaint
+please I am ordering food,food_order
+I need to reserve table today,appointment_booking
+could you find mobile phones,product_search
+can you hi with support,greeting
+could you charged twice please,payment_issue
+complain for me,complaint
+can you service is bad,complaint
+I want to goodbye from my account,goodbye
+product damaged today,complaint
+I want to bye with support,goodbye
+can you give your introduction,name_query
+can you account help for me,account_help
+could you track my package,order_status
+could you weather today today,weather_query
+state your name?,name_query
+I need to account help please,account_help
+thank you assistant,thanks
+raining outside please,weather_query
+hey please,greeting
+could you refund my payment for me,payment_issue
+could you show laptops for me,product_search
+order shipped please,order_status
+please thanks dear,thanks
+please give your introduction,name_query
+please where is my order now,order_status
+assistant name please,name_query
+please hi chatbot,greeting
+please schedule meeting for me,appointment_booking
+delivery status please,order_status
+I need to track my package now,order_status
+can you bye immediately,goodbye
+salam!,greeting
+are you there,greeting
+please okay thanks,thanks
+please bye from my account,goodbye
+what should I call you?,name_query
+please order pizza for me,food_order
+can you get biryani,food_order
+please order shipped now,order_status
+payment failed please,payment_issue
+can you refund my payment today,payment_issue
+hi chatbot!,greeting
+order a burger today,food_order
