@@ -51,8 +51,8 @@ because the dataset contains AI and Data Science-related educational content.
 ```text
 Domain-Specific-QA-Chatbot/
 │
-├── data/
-│   └── qa_dataset.csv
+├── qa_dataset.csv
+│   
 │
 ├── models/
 │   ├── clean_qa_dataset.csv
@@ -66,8 +66,8 @@ Domain-Specific-QA-Chatbot/
 │   ├── similarity_scores.png
 │   └── top_tfidf_words.png
 │
-├── notebook/
-│   └── domain_specific_qa_chatbot.ipynb
+├── qa_chatbot.ipynb
+│   
 │
 ├── app.py
 ├── requirements.txt
