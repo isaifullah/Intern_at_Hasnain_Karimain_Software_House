@@ -4,9 +4,6 @@ numpy
 scikit-learn
 spacy
 transformers
-torch
 sentencepiece
 joblib
-#SpeechRecognition
-#pyttsx3
-#pyaudio
+torch --index-url https://download.pytorch.org/whl/cpu
