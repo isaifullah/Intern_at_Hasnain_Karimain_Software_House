@@ -1,8 +1,12 @@
+streamlit
 pandas
 numpy
 scikit-learn
 spacy
-joblib
 transformers
 torch
-jupyter
+sentencepiece
+joblib
+SpeechRecognition
+pyttsx3
+pyaudio
