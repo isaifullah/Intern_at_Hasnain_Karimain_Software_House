@@ -27,6 +27,14 @@ st.set_page_config(
 
 
 # ============================================================
+# IMPORTANT: BASE PATH FOR STREAMLIT CLOUD
+# ============================================================
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+
+
+# ============================================================
 # CSS
 # ============================================================
 
@@ -247,8 +255,10 @@ def clean_dataset(df):
     df = df.drop_duplicates()
     df = df.reset_index(drop=True)
 
-    df["question"] = df["question"].apply(preprocess_text)
-    df = df[df["question"] != ""]
+    # Keep original question for display, create clean_question for matching
+    df["clean_question"] = df["question"].apply(preprocess_text)
+
+    df = df[df["clean_question"] != ""]
     df = df.reset_index(drop=True)
 
     return df
@@ -265,7 +275,7 @@ def create_tfidf_features(df):
         stop_words="english"
     )
 
-    question_vectors = vectorizer.fit_transform(df["question"])
+    question_vectors = vectorizer.fit_transform(df["clean_question"])
 
     return vectorizer, question_vectors
 
@@ -276,12 +286,16 @@ def create_tfidf_features(df):
 
 @st.cache_resource
 def load_saved_files():
-    df = pd.read_csv(os.path.join("models", "clean_qa_dataset.csv"))
+    df = pd.read_csv(os.path.join(MODEL_DIR, "clean_qa_dataset.csv"))
 
-    with open(os.path.join("models", "tfidf_vectorizer.pkl"), "rb") as file:
+    # If saved CSV does not have clean_question, create it safely
+    if "clean_question" not in df.columns:
+        df = clean_dataset(df)
+
+    with open(os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl"), "rb") as file:
         vectorizer = pickle.load(file)
 
-    with open(os.path.join("models", "question_vectors.pkl"), "rb") as file:
+    with open(os.path.join(MODEL_DIR, "question_vectors.pkl"), "rb") as file:
         question_vectors = pickle.load(file)
 
     return df, vectorizer, question_vectors
@@ -293,6 +307,7 @@ def load_saved_files():
 
 def get_top_matches(user_query, df, vectorizer, question_vectors, top_k=3):
     clean_query = preprocess_text(user_query)
+
     query_vector = vectorizer.transform([clean_query])
 
     similarity_scores = cosine_similarity(
@@ -401,6 +416,7 @@ try:
 
 except Exception as e:
     st.error("Model files not found or dataset format is incorrect.")
+    st.info("Expected model files inside: 15_Q&A_chatbot/models/")
     st.code(str(e))
     st.stop()
 
