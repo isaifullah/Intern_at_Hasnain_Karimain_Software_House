@@ -6,6 +6,7 @@ import re
 import joblib
 import spacy
 from transformers import pipeline
+import torch
 
 # ============================================================
 # PAGE CONFIG
@@ -97,7 +98,8 @@ def load_models():
 
     zero_shot_classifier = pipeline(
         "zero-shot-classification",
-        model="facebook/bart-large-mnli"
+        model="facebook/bart-large-mnli",
+        device = -1
     )
 
     return (
