@@ -247,8 +247,8 @@ def clean_dataset(df):
     df = df.drop_duplicates()
     df = df.reset_index(drop=True)
 
-    df["clean_question"] = df["question"].apply(preprocess_text)
-    df = df[df["clean_question"] != ""]
+    df["question"] = df["question"].apply(preprocess_text)
+    df = df[df["question"] != ""]
     df = df.reset_index(drop=True)
 
     return df
@@ -265,7 +265,7 @@ def create_tfidf_features(df):
         stop_words="english"
     )
 
-    question_vectors = vectorizer.fit_transform(df["clean_question"])
+    question_vectors = vectorizer.fit_transform(df["question"])
 
     return vectorizer, question_vectors
 
