@@ -24,6 +24,7 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+
 #MainMenu, footer, header {
     visibility: hidden;
 }
@@ -38,10 +39,12 @@ st.markdown("""
     max-width: 900px;
 }
 
+/* Sidebar */
 section[data-testid="stSidebar"] {
     background-color: #171717;
 }
 
+/* Fixed Chat Input */
 div[data-testid="stChatInput"] {
     position: fixed;
     bottom: 20px;
@@ -59,11 +62,13 @@ div[data-testid="stChatInput"] textarea {
 }
 
 @media (max-width: 900px) {
+
     div[data-testid="stChatInput"] {
         left: 50%;
         width: 92vw;
     }
 }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -73,43 +78,92 @@ div[data-testid="stChatInput"] textarea {
 
 @st.cache_resource
 def load_models():
+
     nlp = spacy.load("en_core_web_sm")
 
     MODEL_DIR = "models"
 
-    intent_model = joblib.load(os.path.join(MODEL_DIR, "best_model.pkl"))
-    tfidf_vectorizer = joblib.load(os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl"))
-    label_encoder = joblib.load(os.path.join(MODEL_DIR, "label_encoder.pkl"))
+    intent_model = joblib.load(
+        os.path.join(MODEL_DIR, "best_model.pkl")
+    )
+
+    tfidf_vectorizer = joblib.load(
+        os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl")
+    )
+
+    label_encoder = joblib.load(
+        os.path.join(MODEL_DIR, "label_encoder.pkl")
+    )
 
     zero_shot_classifier = pipeline(
         "zero-shot-classification",
         model="facebook/bart-large-mnli"
     )
 
-    return nlp, intent_model, tfidf_vectorizer, label_encoder, zero_shot_classifier
+    return (
+        nlp,
+        intent_model,
+        tfidf_vectorizer,
+        label_encoder,
+        zero_shot_classifier
+    )
 
 
-nlp, intent_model, tfidf_vectorizer, label_encoder, zero_shot_classifier = load_models()
+(
+    nlp,
+    intent_model,
+    tfidf_vectorizer,
+    label_encoder,
+    zero_shot_classifier
+) = load_models()
 
 # ============================================================
 # RESPONSES
 # ============================================================
 
 responses = {
-    "greeting": "Hello! How can I help you today?",
-    "goodbye": "Goodbye! Have a great day.",
-    "thanks": "You're welcome. Let me know if you need anything else.",
-    "food_order": "Sure, I can help you with food ordering. What would you like to order?",
-    "weather_query": "Please tell me your city so I can help with the weather information.",
-    "password_reset": "You can reset your password using the Forgot Password option.",
-    "payment_issue": "Please explain your payment issue.",
-    "order_status": "Please provide your order ID or tracking number.",
-    "technical_support": "Please explain the technical issue you are facing.",
-    "service_info": "We provide support, payments, order tracking, returns, and technical assistance.",
-    "business_hours": "Our support team is available from 9 AM to 6 PM, Monday to Saturday.",
-    "cancellation": "Please confirm if you want to cancel your subscription.",
-    "return_request": "Please provide your order number for return processing.",
-    "unknown_intent": "Sorry, I could not clearly understand your request."
+
+    "greeting":
+        "Hello! How can I help you today?",
+
+    "goodbye":
+        "Goodbye! Have a great day.",
+
+    "thanks":
+        "You're welcome. Let me know if you need anything else.",
+
+    "food_order":
+        "Sure, I can help you with food ordering. What would you like to order?",
+
+    "weather_query":
+        "Please tell me your city so I can help with the weather information.",
+
+    "password_reset":
+        "You can reset your password using the Forgot Password option.",
+
+    "payment_issue":
+        "Please explain your payment issue.",
+
+    "order_status":
+        "Please provide your order ID or tracking number.",
+
+    "technical_support":
+        "Please explain the technical issue you are facing.",
+
+    "service_info":
+        "We provide support, payments, order tracking, returns, and technical assistance.",
+
+    "business_hours":
+        "Our support team is available from 9 AM to 6 PM, Monday to Saturday.",
+
+    "cancellation":
+        "Please confirm if you want to cancel your subscription.",
+
+    "return_request":
+        "Please provide your order number for return processing.",
+
+    "unknown_intent":
+        "Sorry, I could not clearly understand your request."
 }
 
 candidate_labels = list(responses.keys())
@@ -119,7 +173,9 @@ candidate_labels = list(responses.keys())
 # ============================================================
 
 def preprocess_text(text):
+
     text = str(text).lower()
+
     text = re.sub(r"http\S+|www\S+", " ", text)
     text = re.sub(r"<.*?>", " ", text)
     text = re.sub(r"\d+", " number ", text)
@@ -131,31 +187,61 @@ def preprocess_text(text):
     cleaned_words = []
 
     for token in doc:
+
         if (
             not token.is_stop
             and not token.is_punct
             and not token.is_space
             and len(token.text) > 2
         ):
+
             cleaned_words.append(token.lemma_)
 
     return " ".join(cleaned_words)
 
+# ============================================================
+# RULE-BASED INTENT
+# ============================================================
 
 def rule_based_intent(user_input):
+
     text = user_input.lower().strip()
 
-    greetings = ["hi", "hello", "hey", "salam", "assalamualaikum"]
-    thanks = ["ok", "okay", "thanks", "thank you"]
-    goodbye = ["bye", "goodbye"]
-
-    weather_words = [
-        "weather", "wether", "temperature", "temprature",
-        "temp", "hot", "cold", "rain", "forecast",
-        "humidity", "degree", "degrees"
+    greetings = [
+        "hi", "hello", "hey", "salam", "assalamualaikum"
     ]
 
-    food_words = ["pizza", "burger", "biryani", "food", "meal", "drink"]
+    thanks = [
+        "ok", "okay", "thanks", "thank you"
+    ]
+
+    goodbye = [
+        "bye", "goodbye"
+    ]
+
+    weather_words = [
+        "weather",
+        "wether",
+        "temperature",
+        "temprature",
+        "temp",
+        "hot",
+        "cold",
+        "rain",
+        "forecast",
+        "humidity",
+        "degree",
+        "degrees"
+    ]
+
+    food_words = [
+        "pizza",
+        "burger",
+        "biryani",
+        "food",
+        "meal",
+        "drink"
+    ]
 
     if text in greetings:
         return "greeting", 1.0
@@ -198,17 +284,25 @@ def rule_based_intent(user_input):
 
     return None, 0.0
 
+# ============================================================
+# SVM INTENT
+# ============================================================
 
 def predict_intent_svm(user_input, threshold=0.50):
+
     clean_input = preprocess_text(user_input)
 
     input_vector = tfidf_vectorizer.transform([clean_input])
 
     predicted_label = intent_model.predict(input_vector)[0]
 
-    intent = label_encoder.inverse_transform([predicted_label])[0]
+    intent = label_encoder.inverse_transform(
+        [predicted_label]
+    )[0]
 
-    probabilities = intent_model.predict_proba(input_vector)[0]
+    probabilities = intent_model.predict_proba(
+        input_vector
+    )[0]
 
     confidence = float(np.max(probabilities))
 
@@ -217,14 +311,19 @@ def predict_intent_svm(user_input, threshold=0.50):
 
     return intent, confidence
 
+# ============================================================
+# TRANSFORMER FALLBACK
+# ============================================================
 
 def predict_intent_transformer(user_input, threshold=0.45):
+
     result = zero_shot_classifier(
         user_input,
         candidate_labels=candidate_labels
     )
 
     intent = result["labels"][0]
+
     confidence = float(result["scores"][0])
 
     if confidence < threshold:
@@ -232,32 +331,68 @@ def predict_intent_transformer(user_input, threshold=0.45):
 
     return intent, confidence
 
+# ============================================================
+# HYBRID DETECTION
+# ============================================================
 
 def detect_intent(user_input):
-    rule_intent, rule_confidence = rule_based_intent(user_input)
+
+    rule_intent, rule_confidence = rule_based_intent(
+        user_input
+    )
 
     if rule_intent is not None:
-        return rule_intent, rule_confidence * 100, "Rule Based"
 
-    transformer_intent, transformer_confidence = predict_intent_transformer(user_input)
+        return (
+            rule_intent,
+            rule_confidence * 100,
+            "Rule Based"
+        )
+
+    transformer_intent, transformer_confidence = (
+        predict_intent_transformer(user_input)
+    )
 
     if transformer_intent != "unknown_intent":
-        return transformer_intent, transformer_confidence * 100, "Transformer"
 
-    svm_intent, svm_confidence = predict_intent_svm(user_input)
+        return (
+            transformer_intent,
+            transformer_confidence * 100,
+            "Transformer"
+        )
+
+    svm_intent, svm_confidence = predict_intent_svm(
+        user_input
+    )
 
     if svm_intent is not None:
-        return svm_intent, svm_confidence * 100, "SVM"
+
+        return (
+            svm_intent,
+            svm_confidence * 100,
+            "SVM"
+        )
 
     return "unknown_intent", 0.0, "Unknown"
 
+# ============================================================
+# CITY DETECTION
+# ============================================================
 
 def is_possible_city(user_input):
+
     text = user_input.lower().strip()
 
     blocked_words = [
-        "yes", "no", "ok", "okay", "thanks",
-        "thank you", "hi", "hello", "bye"
+        "yes",
+        "no",
+        "ok",
+        "okay",
+        "thanks",
+        "thank you",
+        "hi",
+        "hello",
+        "bye"
     ]
 
     if text in blocked_words:
@@ -269,43 +404,6 @@ def is_possible_city(user_input):
     return len(text.split()) <= 3 and len(text) >= 2
 
 # ============================================================
-# VOICE
-# ============================================================
-
-@st.cache_resource
-def load_tts_engine():
-    engine = pyttsx3.init()
-    engine.setProperty("rate", 170)
-    engine.setProperty("volume", 1.0)
-    return engine
-
-
-tts_engine = load_tts_engine()
-
-
-def speak_response(text):
-    try:
-        tts_engine.say(text)
-        tts_engine.runAndWait()
-    except Exception:
-        pass
-
-
-def listen_to_voice():
-    recognizer = sr.Recognizer()
-
-    try:
-        with sr.Microphone() as source:
-            st.toast("Listening...")
-            recognizer.adjust_for_ambient_noise(source, duration=0.5)
-            audio = recognizer.listen(source, timeout=5, phrase_time_limit=10)
-
-        return recognizer.recognize_google(audio)
-
-    except Exception:
-        return None
-
-# ============================================================
 # SESSION STATE
 # ============================================================
 
@@ -315,25 +413,40 @@ if "messages" not in st.session_state:
 if "last_intent" not in st.session_state:
     st.session_state.last_intent = None
 
-if "voice_output" not in st.session_state:
-    st.session_state.voice_output = False
-
 # ============================================================
 # CHATBOT ENGINE
 # ============================================================
 
 def chatbot_response(user_input):
-    if st.session_state.last_intent == "weather_query" and is_possible_city(user_input):
-        response = f"Thank you. I will check the weather information for {user_input.title()}."
+
+    if (
+        st.session_state.last_intent == "weather_query"
+        and is_possible_city(user_input)
+    ):
+
+        response = (
+            f"Thank you. I will check the weather "
+            f"information for {user_input.title()}."
+        )
+
         intent = "weather_query_followup"
+
         confidence = 100.0
+
         model_used = "Context Memory"
+
         st.session_state.last_intent = None
 
     else:
-        intent, confidence, model_used = detect_intent(user_input)
 
-        response = responses.get(intent, responses["unknown_intent"])
+        intent, confidence, model_used = detect_intent(
+            user_input
+        )
+
+        response = responses.get(
+            intent,
+            responses["unknown_intent"]
+        )
 
         if intent in [
             "weather_query",
@@ -342,15 +455,29 @@ def chatbot_response(user_input):
             "cancellation",
             "food_order"
         ]:
+
             st.session_state.last_intent = intent
+
         else:
+
             st.session_state.last_intent = None
 
-    return response, intent, round(confidence, 2), model_used
+    return (
+        response,
+        intent,
+        round(confidence, 2),
+        model_used
+    )
 
+# ============================================================
+# ADD MESSAGE
+# ============================================================
 
 def add_user_message(user_text):
-    response, intent, confidence, model_used = chatbot_response(user_text)
+
+    response, intent, confidence, model_used = (
+        chatbot_response(user_text)
+    )
 
     st.session_state.messages.append({
         "role": "user",
@@ -365,54 +492,56 @@ def add_user_message(user_text):
         "model": model_used
     })
 
-    if st.session_state.voice_output:
-        speak_response(response)
-
 # ============================================================
 # SIDEBAR
 # ============================================================
 
 with st.sidebar:
+
     st.title("Hybrid AI")
+
     st.caption("Context-aware assistant")
 
     st.markdown("---")
 
-    if st.button("New Chat", use_container_width=True):
+    if st.button(
+        "New Chat",
+        use_container_width=True
+    ):
+
         st.session_state.messages = []
+
         st.session_state.last_intent = None
+
         st.rerun()
-
-    st.session_state.voice_output = st.toggle(
-        "Voice Output",
-        value=st.session_state.voice_output
-    )
-
-    if st.button("🎤 Voice Input", use_container_width=True):
-        voice_text = listen_to_voice()
-
-        if voice_text:
-            add_user_message(voice_text)
-            st.rerun()
-        else:
-            st.warning("Voice not recognized.")
 
     st.markdown("---")
 
     st.subheader("History")
 
     if not st.session_state.messages:
+
         st.info("No chat history yet.")
+
     else:
+
         user_messages = [
+
             msg for msg in st.session_state.messages
+
             if msg["role"] == "user"
         ]
 
-        for i, msg in enumerate(reversed(user_messages[-5:]), 1):
+        for i, msg in enumerate(
+            reversed(user_messages[-5:]),
+            1
+        ):
+
             st.write(f"{i}. {msg['content']}")
 
-        history_df = pd.DataFrame(st.session_state.messages)
+        history_df = pd.DataFrame(
+            st.session_state.messages
+        )
 
         st.download_button(
             "Download History",
@@ -423,29 +552,43 @@ with st.sidebar:
         )
 
 # ============================================================
-# MAIN CHAT UI
+# MAIN UI
 # ============================================================
 
 st.title("Hybrid AI Chatbot")
 
 if not st.session_state.messages:
-    st.info("Ask me anything about weather, order tracking, payments, password reset, food ordering, or technical support.")
+
+    st.info(
+        "Ask me anything about weather, order tracking, "
+        "payments, password reset, food ordering, "
+        "or technical support."
+    )
 
 for msg in st.session_state.messages:
+
     with st.chat_message(msg["role"]):
+
         st.write(msg["content"])
 
         if msg["role"] == "assistant":
+
             st.caption(
-                f"Intent: {msg['intent']} | Confidence: {msg['confidence']}% | Model: {msg['model']}"
+                f"Intent: {msg['intent']} | "
+                f"Confidence: {msg['confidence']}% | "
+                f"Model: {msg['model']}"
             )
 
 # ============================================================
-# FIXED CHAT INPUT
+# CHAT INPUT
 # ============================================================
 
-user_input = st.chat_input("Message Hybrid AI Chatbot...")
+user_input = st.chat_input(
+    "Message Hybrid AI Chatbot..."
+)
 
 if user_input:
+
     add_user_message(user_input)
+
     st.rerun()
