@@ -6,4 +6,4 @@ spacy
 transformers
 sentencepiece
 joblib
-torch
+torch==2.2.2
