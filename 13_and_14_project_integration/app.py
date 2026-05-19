@@ -5,8 +5,10 @@ import os
 import re
 import joblib
 import spacy
-import speech_recognition as sr
-import pyttsx3
+#i have commented the voice related libraries because i want to upload this project on streamlit cloud and 
+# it does not support audio input and output. You can uncomment these lines and use voice features when running locally.
+#import speech_recognition as sr
+#import pyttsx3
 from transformers import pipeline
 
 # ============================================================

@@ -7,6 +7,6 @@ transformers
 torch
 sentencepiece
 joblib
-SpeechRecognition
-pyttsx3
-pyaudio
+#SpeechRecognition
+#pyttsx3
+#pyaudio
