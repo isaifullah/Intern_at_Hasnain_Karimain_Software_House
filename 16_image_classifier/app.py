@@ -3,12 +3,10 @@ import tensorflow as tf
 import numpy as np
 import json
 import cv2
-import av
 
 from PIL import Image
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 
 
 # ============================================================
