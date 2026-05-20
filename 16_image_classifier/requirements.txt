@@ -7,5 +7,3 @@ scikit-learn
 opencv-python-headless
 streamlit
 pillow
-streamlit-webrtc
-av
