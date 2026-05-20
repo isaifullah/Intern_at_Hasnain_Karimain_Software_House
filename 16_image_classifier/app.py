@@ -2,8 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 import json
-import cv2
-
+from pathlib import Path
 from PIL import Image
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
@@ -18,6 +17,15 @@ st.set_page_config(
     page_icon="🌸",
     layout="wide"
 )
+
+
+# ============================================================
+# FILE PATHS
+# ============================================================
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "models" / "flower_classification_model.h5"
+CLASS_NAMES_PATH = BASE_DIR / "models" / "class_names.json"
 
 
 # ============================================================
@@ -143,6 +151,12 @@ st.markdown("""
     padding: 18px;
 }
 
+[data-testid="stCameraInput"] {
+    background: rgba(15, 23, 42, 0.35);
+    border-radius: 18px;
+    padding: 18px;
+}
+
 h1, h2, h3, h4, h5, h6, p, label, span, div {
     color: #f8fafc;
 }
@@ -165,13 +179,22 @@ button {
 
 @st.cache_resource
 def load_trained_model():
-    return tf.keras.models.load_model("models/flower_classification_model.h5")
+    return tf.keras.models.load_model(MODEL_PATH)
 
 
 @st.cache_data
 def load_class_names():
-    with open("models/class_names.json", "r") as file:
+    with open(CLASS_NAMES_PATH, "r") as file:
         return json.load(file)
+
+
+if not MODEL_PATH.exists():
+    st.error(f"Model file not found: {MODEL_PATH}")
+    st.stop()
+
+if not CLASS_NAMES_PATH.exists():
+    st.error(f"Class names file not found: {CLASS_NAMES_PATH}")
+    st.stop()
 
 
 model = load_trained_model()
@@ -198,47 +221,6 @@ def predict_flower(img):
 
 
 # ============================================================
-# REAL-TIME VIDEO CLASSIFIER
-# ============================================================
-
-class FlowerVideoClassifier(VideoTransformerBase):
-    def transform(self, frame):
-        img = frame.to_ndarray(format="bgr24")
-
-        resized = cv2.resize(img, (224, 224))
-        rgb = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
-
-        img_array = preprocess_input(rgb.astype(np.float32))
-        img_array = np.expand_dims(img_array, axis=0)
-
-        prediction = model.predict(img_array, verbose=0)
-
-        predicted_index = np.argmax(prediction)
-        confidence = float(np.max(prediction))
-        predicted_class = class_names[predicted_index]
-
-        if confidence < 0.60:
-            label = f"Unknown Flower | {confidence:.2f}"
-            color = (0, 165, 255)
-        else:
-            label = f"{predicted_class} | {confidence:.2f}"
-            color = (0, 255, 0)
-
-        cv2.rectangle(img, (15, 15), (620, 75), (15, 23, 42), -1)
-        cv2.putText(
-            img,
-            label,
-            (30, 58),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            1.1,
-            color,
-            3
-        )
-
-        return img
-
-
-# ============================================================
 # HEADER
 # ============================================================
 
@@ -247,14 +229,14 @@ st.markdown("""
     <div class="hero-title">🌸 Flower Image Classification</div>
     <div class="hero-subtitle">
         A professional deep learning system powered by transfer learning.
-        Upload a flower image or use live webcam classification to detect flowers in real time.
+        Upload a flower image or use live camera capture to classify flowers with confidence scores and prediction insights.
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 
 # ============================================================
-# METRICS
+# METRIC CARDS
 # ============================================================
 
 info_col1, info_col2, info_col3 = st.columns(3)
@@ -292,15 +274,14 @@ st.markdown("""
 <div class="glass-card">
     <h3>Prediction Control Panel</h3>
     <p>
-        Select an input method below. You can upload a flower image for accurate prediction
-        or use the live webcam mode for real-time frame-by-frame flower classification.
+        Choose between image upload and live camera capture. For best results, use a clear flower image with good lighting and minimum background noise.
     </p>
 </div>
 """, unsafe_allow_html=True)
 
 mode = st.radio(
     "Choose Prediction Mode",
-    ["Upload Image", "Live Webcam"],
+    ["Upload Image", "Live Camera"],
     horizontal=True
 )
 
@@ -311,9 +292,9 @@ selected_img = None
 # UPLOAD IMAGE MODE
 # ============================================================
 
-if mode == "Upload Image":
-    upload_col, guide_col = st.columns([1.1, 0.9])
+upload_col, guide_col = st.columns([1.1, 0.9])
 
+if mode == "Upload Image":
     with upload_col:
         st.subheader("Upload Flower Image")
 
@@ -331,46 +312,51 @@ if mode == "Upload Image":
     with guide_col:
         st.markdown("""
         <div class="glass-card">
-            <h3>Prediction Pipeline</h3>
+            <h3>Upload Mode</h3>
             <p>
-                The uploaded image is resized to 224×224, preprocessed using MobileNetV2 preprocessing,
-                and passed through the fine-tuned transfer learning model.
+                Upload mode is recommended for accurate predictions because uploaded images are usually clearer than webcam frames.
             </p>
             <p>
-                Upload mode usually gives better results because images are clearer than live camera frames.
+                The model will process the image and return the predicted flower class with confidence score.
             </p>
         </div>
         """, unsafe_allow_html=True)
 
 
 # ============================================================
-# LIVE WEBCAM MODE
+# LIVE CAMERA MODE
 # ============================================================
 
-if mode == "Live Webcam":
-    st.markdown("""
-    <div class="glass-card">
-        <h3>Live Webcam Classification</h3>
-        <p>
-            Click START below to activate your webcam. The model will classify flowers directly from the live video stream.
-            Keep the flower centered and use good lighting for better predictions.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+if mode == "Live Camera":
+    with upload_col:
+        st.subheader("Live Camera Flower Capture")
 
-    webrtc_streamer(
-        key="flower-live-webcam",
-        video_processor_factory=FlowerVideoClassifier,
-        media_stream_constraints={
-            "video": True,
-            "audio": False
-        },
-        async_processing=True
-    )
+        camera_file = st.camera_input(
+            "Capture a flower image",
+            label_visibility="collapsed"
+        )
+
+        st.caption("Use good lighting and keep the flower centered in the camera frame.")
+
+        if camera_file is not None:
+            selected_img = Image.open(camera_file).convert("RGB")
+
+    with guide_col:
+        st.markdown("""
+        <div class="glass-card">
+            <h3>Live Camera Mode</h3>
+            <p>
+                Live camera mode allows you to capture a flower image directly through the webcam and classify it instantly.
+            </p>
+            <p>
+                This mode is stable on Streamlit Cloud and works better than heavy real-time video dependencies.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
 
 
 # ============================================================
-# IMAGE UPLOAD PREDICTION RESULTS
+# PREDICTION RESULTS
 # ============================================================
 
 if selected_img is not None:
@@ -388,7 +374,7 @@ if selected_img is not None:
     image_col, prediction_col = st.columns([1, 1])
 
     with image_col:
-        st.subheader("Uploaded Image")
+        st.subheader("Selected Image")
         st.image(selected_img, use_container_width=True)
 
     with prediction_col:
@@ -403,7 +389,7 @@ if selected_img is not None:
             </div>
             """, unsafe_allow_html=True)
 
-            st.warning("Try uploading a clearer flower image with better lighting.")
+            st.warning("Try uploading or capturing a clearer flower image.")
 
         else:
             st.markdown(f"""
@@ -445,12 +431,12 @@ if selected_img is not None:
 # READY MESSAGE
 # ============================================================
 
-if mode == "Upload Image" and selected_img is None:
+else:
     st.markdown("""
     <div class="glass-card">
         <h3>Ready for Prediction</h3>
         <p>
-            Upload a clear flower image to start classification.
+            Select upload mode or live camera mode, then provide a flower image.
             The system will display the predicted class, confidence score, top prediction probabilities, and top 3 model guesses.
         </p>
     </div>
