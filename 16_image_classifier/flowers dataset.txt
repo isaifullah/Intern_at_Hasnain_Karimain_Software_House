@@ -1,0 +1,19 @@
+we have used flowers dataset in this project which contains 14 different classes of flowers and the dataset are as follows.
+
+dataset link: https://www.kaggle.com/datasets/marquis03/flower-classification
+
+14 classes are below:
+ 1. astilbe
+ 2.bellflower
+ 3.black_eyed_susan
+ 4.calendula
+ 5.california_puppy
+ 6.carnation
+ 7.common_daisy
+ 8.coreopsis
+ 9.dandelion
+ 10.iris
+ 11.rose
+ 12.sunflower
+ 13.tulip
+ 14.water_lilly
