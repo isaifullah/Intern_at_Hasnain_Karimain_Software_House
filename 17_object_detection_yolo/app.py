@@ -178,11 +178,13 @@ st.markdown(
 # ============================================================
 
 OBJECT_MODEL_PATH = "yolov8n.pt"
-KIDNEY_MODEL_PATH = "runs/detect/kidney_stone_yolo-7/weights/best.pt"
 
-OUTPUT_IMAGE_DIR = "output/streamlit_images"
-OUTPUT_VIDEO_DIR = "output/streamlit_videos"
-LOG_DIR = "output/logs"
+# Correct Streamlit Cloud path
+KIDNEY_MODEL_PATH = "17_object_detection_yolo/runs/detect/kidney_stone_yolo-7/weights/best.pt"
+
+OUTPUT_IMAGE_DIR = "17_object_detection_yolo/output/streamlit_images"
+OUTPUT_VIDEO_DIR = "17_object_detection_yolo/output/streamlit_videos"
+LOG_DIR = "17_object_detection_yolo/output/logs"
 
 os.makedirs(OUTPUT_IMAGE_DIR, exist_ok=True)
 os.makedirs(OUTPUT_VIDEO_DIR, exist_ok=True)
@@ -200,6 +202,10 @@ def load_object_model():
 
 @st.cache_resource
 def load_kidney_model():
+    if not os.path.exists(KIDNEY_MODEL_PATH):
+        st.error(f"Kidney model not found at: {KIDNEY_MODEL_PATH}")
+        st.stop()
+
     return YOLO(KIDNEY_MODEL_PATH)
 
 
