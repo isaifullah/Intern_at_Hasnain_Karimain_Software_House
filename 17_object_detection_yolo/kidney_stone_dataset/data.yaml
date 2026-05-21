@@ -1,0 +1,13 @@
+train: "C://Users//Saif Ullah//Intern_at_Hasnain_Karimain_Software_House//17_object_detection_yolo//kidney_stone_dataset//train//images"
+val: "C://Users//Saif Ullah//Intern_at_Hasnain_Karimain_Software_House//17_object_detection_yolo//kidney_stone_dataset//valid//images"
+test: "C://Users//Saif Ullah//Intern_at_Hasnain_Karimain_Software_House//17_object_detection_yolo//kidney_stone_dataset//test//images"
+
+nc: 1
+names: ['Tas_Var']
+
+roboflow:
+  workspace: tez-nwkf5
+  project: tez_roi_aug
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/tez-nwkf5/tez_roi_aug/dataset/3
