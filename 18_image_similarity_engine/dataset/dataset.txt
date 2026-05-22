@@ -1,0 +1,4 @@
+the dataset for this project can be downloaded from the following link.
+download link: https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small
+
+note: due to low memory size i have downloaded the small size you can use the large one if you have enough memory.
