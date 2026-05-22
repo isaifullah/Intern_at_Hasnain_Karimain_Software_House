@@ -4,7 +4,7 @@
 
 ### *An Industry-Level AI-Powered Visual Search and Semantic Retrieval System*
 
-Developed by **Khalid Saifullah**
+Developed by **Saif ullah**
 
 </div>
 
