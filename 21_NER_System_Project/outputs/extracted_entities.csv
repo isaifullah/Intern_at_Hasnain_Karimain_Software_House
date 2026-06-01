@@ -1,0 +1,149 @@
+entity,label,score,start,end,source,input_text,timestamp
+Elon Musk,ORGANIZATION,0.9904,1,10,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+Tesla,ORGANIZATION,0.9963,19,24,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+California,LOCATION,0.9998,28,38,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+Apple,ORGANIZATION,0.9983,49,54,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+London,LOCATION,0.9996,78,84,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+12 March 2024,DATE,1.0,88,101,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+10:30 AM,TIME,1.0,105,113,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+30 AM,TIME,1.0,108,113,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:13:09
+Barack Obama,PERSON,0.9994,0,12,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:13:12
+Microsoft,ORGANIZATION,0.9981,21,30,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:13:12
+Seattle,LOCATION,0.9991,47,54,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:13:12
+15 April 2025,DATE,1.0,58,71,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:13:12
+9 AM,TIME,1.0,75,79,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:13:12
+sa,PERSON,0.9922,0,2,Transformer,"saifullah lives in swat valley pakistan. he visited upper dir at september 14, 2025 at 10:35pm",2026-06-01 23:14:34
+10:35pm,TIME,1.0,87,94,Regex,"saifullah lives in swat valley pakistan. he visited upper dir at september 14, 2025 at 10:35pm",2026-06-01 23:14:34
+35pm,TIME,1.0,90,94,Regex,"saifullah lives in swat valley pakistan. he visited upper dir at september 14, 2025 at 10:35pm",2026-06-01 23:14:34
+Elon Musk,PERSON,0.9975,1,10,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+Tesla,ORGANIZATION,0.9868,19,24,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+California,LOCATION,0.9997,28,38,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+Apple,ORGANIZATION,0.9985,49,54,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+London,LOCATION,0.9993,78,84,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+12 March 2024,DATE,1.0,88,101,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+10:30 AM,TIME,1.0,105,113,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+30 AM,TIME,1.0,108,113,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-01 23:34:47
+Barack Obama,PERSON,0.9994,0,12,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:34:54
+Microsoft,ORGANIZATION,0.9981,21,30,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:34:54
+Seattle,LOCATION,0.9991,47,54,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:34:54
+15 April 2025,DATE,1.0,58,71,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:34:54
+9 AM,TIME,1.0,75,79,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:34:54
+Saif Ullah,PERSON,0.998,0,10,Transformer,"Saif Ullah lives in swat valley pakistan. and he visited upper dir on september 12, 2024 at 10:34pm",2026-06-01 23:35:39
+swat,LOCATION,0.7924,20,24,Transformer,"Saif Ullah lives in swat valley pakistan. and he visited upper dir on september 12, 2024 at 10:34pm",2026-06-01 23:35:39
+##akistan,LOCATION,0.9711,33,40,Transformer,"Saif Ullah lives in swat valley pakistan. and he visited upper dir on september 12, 2024 at 10:34pm",2026-06-01 23:35:39
+10:34pm,TIME,1.0,92,99,Regex,"Saif Ullah lives in swat valley pakistan. and he visited upper dir on september 12, 2024 at 10:34pm",2026-06-01 23:35:39
+34pm,TIME,1.0,95,99,Regex,"Saif Ullah lives in swat valley pakistan. and he visited upper dir on september 12, 2024 at 10:34pm",2026-06-01 23:35:39
+Barack Obama,PERSON,0.9982,0,12,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:25
+Microsoft,ORGANIZATION,0.9988,21,30,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:25
+Seattle,LOCATION,0.999,47,54,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:25
+15 April 2025,DATE,1.0,58,71,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:25
+9 AM,TIME,1.0,75,79,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:25
+Barack Obama,PERSON,0.9982,0,12,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:47
+Microsoft,ORGANIZATION,0.9988,21,30,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:47
+Seattle,LOCATION,0.999,47,54,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:47
+15 April 2025,DATE,1.0,58,71,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:47
+9 AM,TIME,1.0,75,79,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-01 23:36:47
+Muhmmad Rauf,PERSON,0.9933,0,12,Transformer,Muhmmad Rauf is living in Upper Dir valley,2026-06-01 23:39:03
+Upper Dir,LOCATION,0.9801,26,35,Transformer,Muhmmad Rauf is living in Upper Dir valley,2026-06-01 23:39:03
+Adnan khan,PERSON,0.9953,0,10,Transformer,"Adnan khan lives in karachi pakistan and e visisted his clinnic name adnan aesgthetic clinic in bahira towm
+",2026-06-01 23:49:59
+karachi,LOCATION,0.9502,20,27,Transformer,"Adnan khan lives in karachi pakistan and e visisted his clinnic name adnan aesgthetic clinic in bahira towm
+",2026-06-01 23:49:59
+##akistan,LOCATION,0.9861,29,36,Transformer,"Adnan khan lives in karachi pakistan and e visisted his clinnic name adnan aesgthetic clinic in bahira towm
+",2026-06-01 23:49:59
+adnan,PERSON,0.9877,69,74,Transformer,"Adnan khan lives in karachi pakistan and e visisted his clinnic name adnan aesgthetic clinic in bahira towm
+",2026-06-01 23:49:59
+Adnan khan,PERSON,0.9959,0,10,Transformer,"Adnan khan runs a clinic named adnan aesthetic clinc
+",2026-06-01 23:51:03
+haripur,LOCATION,0.7459,35,42,Transformer,i am studying at the university of haripur,2026-06-01 23:51:37
+Elon Musk,PERSON,0.9975,1,10,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+Tesla,ORGANIZATION,0.9868,19,24,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+California,LOCATION,0.9997,28,38,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+Apple,ORGANIZATION,0.9985,49,54,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+London,LOCATION,0.9993,78,84,Transformer,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+12 March 2024,DATE,1.0,88,101,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+10:30 AM,TIME,1.0,105,113,Regex,"
+Elon Musk founded Tesla in California in 2003. 
+Apple opened a new office in London on 12 March 2024 at 10:30 AM.
+",2026-06-02 00:03:58
+Barack Obama,PERSON,0.9982,0,12,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-02 00:04:01
+Microsoft,ORGANIZATION,0.9988,21,30,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-02 00:04:01
+Seattle,LOCATION,0.999,47,54,Transformer,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-02 00:04:01
+15 April 2025,DATE,1.0,58,71,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-02 00:04:01
+9 AM,TIME,1.0,75,79,Regex,Barack Obama visited Microsoft headquarters in Seattle on 15 April 2025 at 9 AM.,2026-06-02 00:04:01
+Sai,PERSON,0.9993,0,3,Transformer,"Saif ullah lives in swat valley and he gets to exam center at 10:35pm on march 12, 2025",2026-06-02 00:10:20
+##f ullah,PERSON,0.8776,3,10,Transformer,"Saif ullah lives in swat valley and he gets to exam center at 10:35pm on march 12, 2025",2026-06-02 00:10:20
+10:35pm,TIME,1.0,62,69,Regex,"Saif ullah lives in swat valley and he gets to exam center at 10:35pm on march 12, 2025",2026-06-02 00:10:20
+Sai,PERSON,0.9993,0,3,Transformer,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12/12/ 2025,2026-06-02 00:10:50
+##f ullah,PERSON,0.8696,3,10,Transformer,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12/12/ 2025,2026-06-02 00:10:50
+10:35pm,TIME,1.0,62,69,Regex,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12/12/ 2025,2026-06-02 00:10:50
+Sai,PERSON,0.9993,0,3,Transformer,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12-12-2025,2026-06-02 00:11:12
+##f ullah,PERSON,0.8748,3,10,Transformer,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12-12-2025,2026-06-02 00:11:12
+10:35pm,TIME,1.0,62,69,Regex,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12-12-2025,2026-06-02 00:11:12
+12-12-2025,DATE,1.0,73,83,Regex,Saif ullah lives in swat valley and he gets to exam center at 10:35pm on 12-12-2025,2026-06-02 00:11:12

@@ -1,0 +1,7 @@
+numpy==1.26.4
+spacy==3.7.5
+torch
+transformers
+pandas
+streamlit
+ipython
