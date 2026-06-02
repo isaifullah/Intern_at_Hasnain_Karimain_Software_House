@@ -1,7 +1,9 @@
 # ============================================================
 # AI MODEL DEPLOYMENT DASHBOARD USING STREAMLIT
-# Final Professional UI with Interactive Plotly Analytics
+# Final Professional UI with Fixed Model Paths
 # ============================================================
+
+from pathlib import Path
 
 import joblib
 import numpy as np
@@ -24,16 +26,29 @@ st.set_page_config(
 
 
 # ============================================================
+# PROJECT PATH CONFIGURATION
+# ============================================================
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_DIR = BASE_DIR / "models"
+
+
+# ============================================================
 # LOAD PROJECT FILES
 # ============================================================
 
 @st.cache_resource
 def load_project_files():
-    small_model = joblib.load("models/small_model.pkl")
-    large_model = joblib.load("models/large_model.pkl")
-    target_names = joblib.load("models/target_names.pkl")
-    feature_names = joblib.load("models/feature_names.pkl")
-    model_results = joblib.load("models/model_results.pkl")
+    """
+    Loads trained models and metadata using paths relative to app.py.
+    This avoids deployment path errors on Streamlit Cloud.
+    """
+
+    small_model = joblib.load(MODEL_DIR / "small_model.pkl")
+    large_model = joblib.load(MODEL_DIR / "large_model.pkl")
+    target_names = joblib.load(MODEL_DIR / "target_names.pkl")
+    feature_names = joblib.load(MODEL_DIR / "feature_names.pkl")
+    model_results = joblib.load(MODEL_DIR / "model_results.pkl")
 
     return small_model, large_model, target_names, feature_names, model_results
 
